@@ -3,4 +3,5 @@ public enum TypeDechets {
 
     #nickel mon gate
     //hamdoulillah
+    ffkfk
 }
