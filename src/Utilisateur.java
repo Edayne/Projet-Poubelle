@@ -4,6 +4,7 @@ public class Utilisateur{
     private int codeAcces;
     private int ptsFidelite;
     private Poubelle poubelle;
+    private DéposerDéchets déposerDéchets;
 
 
     //Getters et setters
@@ -41,7 +42,6 @@ public class Utilisateur{
     //Méthodes
     public void convertirPtsFidelite(int ptsFidelite) {
         this.ptsFidelite = ptsFidelite;
-        this.poubelle.convertirPtsFidelite(ptsFidelite);
         this.poubelle.consulterHistorique();
     }
     public void consulterHistorique() {
@@ -51,6 +51,5 @@ public class Utilisateur{
         System.out.println("Code Acces : " + getCodeAcces());
         System.out.println("Pts Fidelite : " + getPtsFidelite());
         System.out.println("Poubelle : " + getPoubelle());
-        System.out.println();
     }
 }
