@@ -8,6 +8,7 @@ public abstract class Poubelle {
     private TypeDechets typeDechets;
     private ArrayList<Utilisateur> listeUser; //Définit les utilisateurs possesseurs
     //de cette poubelle
+    private CentreDeTri centreDeTri;
 
     //Ajout d'un nouvel utilisateur en fin de liste
     public void addUser(Utilisateur user) {
@@ -33,6 +34,7 @@ public abstract class Poubelle {
         return false;
     }
 
+    //Envoit une notification au centre de tri affilié
     public void envoyerNotifCentre(){
         System.out.println("Poubelle n° "+ getIdPoubelle() + " pleine !");
     }
