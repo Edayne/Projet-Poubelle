@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 public class Utilisateur{
     private int idUser; 
     private String nom;
     private int codeAcces;
     private int ptsFidelite;
     private Poubelle poubelle;
-    private DeposerDechets[] deposerDechets;
+    private ArrayList<DeposerDechet> listeDeposerDechets;
 
 
 
@@ -70,16 +72,16 @@ public class Utilisateur{
         this.poubelle = poubelle;
     }
     /**
-     * @return DéposerDéchets return the déposerDéchets
+     * @return ArrayList<DeposerDechet> return the listeDeposerDechets
      */
-    public DéposerDéchets getDéposerDéchets() {
-        return déposerDéchets;
+    public ArrayList<DeposerDechet> getListeDeposerDechets() {
+        return listeDeposerDechets;
     }
     /**
-     * @param déposerDéchets the déposerDéchets to set
+     * @param listeDeposerDechets the listeDeposerDechets to set
      */
-    public void setDéposerDéchets(DéposerDéchets déposerDéchets) {
-        this.déposerDéchets = déposerDéchets;
+    public void setListeDeposerDechets(ArrayList<DeposerDechet> listeDeposerDechets) {
+        this.listeDeposerDechets = listeDeposerDechets;
     }
 
     
@@ -96,6 +98,6 @@ public class Utilisateur{
         System.out.println("Code Acces : " + getCodeAcces());
         System.out.println("Pts Fidelite : " + getPtsFidelite());
         System.out.println("Poubelle : " + getPoubelle());
-        System.out.println("DéposerDéchets : " + getDéposer());
+        System.out.println("Dechets deposes : " +getListeDeposerDechets.date);
     }
 }
