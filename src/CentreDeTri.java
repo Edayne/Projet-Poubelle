@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+
 public class CentreDeTri {
     private String nom;
     private String adresse;
+    private ArrayList<Poubelle> listePoubelles;
 
 
     //Getters et setters
@@ -28,7 +31,12 @@ public class CentreDeTri {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-
+    /**
+     * @param listePoubelles the listePoubelles to set
+     */
+    public void setListePoubelles(ArrayList<Poubelle> listePoubelles) {
+        this.listePoubelles = listePoubelles;
+    }
 
     //Methodes
     public void placerPoubelle() {
@@ -37,4 +45,14 @@ public class CentreDeTri {
     }
     public void realiserStats() {
     }
+
+    /**
+     * @return ArrayList<Poubelle> return the listePoubelles
+     */
+    public ArrayList<Poubelle> getListePoubelles() {
+        return listePoubelles;
+    }
+
+    
+
 }
