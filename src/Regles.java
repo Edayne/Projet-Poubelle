@@ -1,18 +1,36 @@
 public class Regles {
-    private int nbPoints;
-
+    private int PourcentageProduit;
+    private Produits choixBon;
     
-    //Getters et Setters
+    
+
+
     /**
-     * @return int return the nbPoints
+     * @return int return the PourcentageProduit
      */
-    public int getNbPoints() {
-        return nbPoints;
+    public int getPourcentageProduit() {
+        return PourcentageProduit;
     }
+
     /**
-     * @param nbPoints the nbPoints to set
+     * @param PourcentageProduit the PourcentageProduit to set
      */
-    public void setNbPoints(int nbPoints) {
-        this.nbPoints = nbPoints;
+    public void setPourcentageProduit(int PourcentageProduit) {
+        this.PourcentageProduit = PourcentageProduit;
     }
+
+    /**
+     * @return Produits return the choixBon
+     */
+    public Produits getChoixBon() {
+        return choixBon;
+    }
+
+    /**
+     * @param choixBon the choixBon to set
+     */
+    public void setChoixBon(Produits choixBon) {
+        this.choixBon = choixBon;
+    }
+
 }
