@@ -1,4 +1,10 @@
+import java.util.Date;
+
 public class DéposerDéchet {
-    private 
-    private 
+    private Date date;
+    private int qteDechet;
+    private TypeDechets typeDechets;
+
+    
+    }
 }
