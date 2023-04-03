@@ -98,6 +98,6 @@ public class Utilisateur{
         System.out.println("Code Acces : " + getCodeAcces());
         System.out.println("Pts Fidelite : " + getPtsFidelite());
         System.out.println("Poubelle : " + getPoubelle());
-        System.out.println("Dechets deposes : " +getListeDeposerDechets.date);
+        System.out.println("Dechets deposes : " +getListeDeposerDechets());
     }
 }
