@@ -7,8 +7,8 @@ public class Utilisateur{
 
 
     //Getters et setters
-    public getIdUser() {
-    return idUser;
+    public int getIdUser() {
+        return idUser;
     }
     public void setIdUser(int idUser) {
         this.idUser = idUser;

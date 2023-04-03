@@ -5,7 +5,6 @@ public enum TypeDechets {
     RECYCL(20), 
     PAPIERS(15), 
     AUTRES(45);
-    //hamdoulillah
 
     private double masse; //unité arbitraire
 
