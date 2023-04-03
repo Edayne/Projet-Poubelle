@@ -62,5 +62,11 @@ public class DéposerDéchet {
     public void setPtsgagné(int ptsgagné) {
         this.ptsgagné = ptsgagné;
     }
+    public boolean checkTypeDechets(){
+        
+    }
+    public int calculerQteDechets(){
+        pass;
+    }
 
 }
