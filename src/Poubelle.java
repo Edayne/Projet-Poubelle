@@ -1,17 +1,36 @@
+import java.util.ArrayList;
+
 public abstract class Poubelle {
     private int idPoubelle;
     private String emplacement;
     private int capaciteMax;
     private int quantiteAct;
     private TypeDechets typeDechets;
+    private ArrayList<Utilisateur> listeUser; //Définit les utilisateurs possesseurs
+    //de cette poubelle
 
-
+    //Ajout d'un nouvel utilisateur en fin de liste
     public void addUser(Utilisateur user) {
-
+        this.listeUser.add(user);
     }
 
-    public void checkUser(Utilisateur user) {
-        idUser = get
+    //Teste si l'utilisateur qui tente de mettre un déchet est propriétaire
+    public boolean checkUser(Utilisateur utilisateur) {
+        int idTeste = utilisateur.getIdUser();
+
+        ArrayList<Integer> listeIdUser = new ArrayList<Integer>();
+        for (Utilisateur utilIter : listeUser) {
+            listeIdUser.add(utilIter.getIdUser());
+        }
+
+        for (Integer idIter : listeIdUser) {
+            if (idIter == idTeste) {
+                System.out.println("Il s'agit du bon utilisateur.");
+                return(true);
+            } 
+        }
+        System.out.println("Vous n'êtes pas propriétaire de cette poubelle.");
+        return false;
     }
 
     public void envoyerNotifCentre(){
