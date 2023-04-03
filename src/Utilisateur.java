@@ -3,6 +3,7 @@ public class Utilisateur {
     private String nom;
     private int codeAcces;
     private int ptsFidelite;
+    private Poubelle poubelle;
 
     //Getters et setters
     public getIdUser() {
@@ -28,5 +29,11 @@ public class Utilisateur {
     }
     public void setPtsFidelite(int ptsFidelite) {
         this.ptsFidelite = ptsFidelite;
+    }
+    public Poubelle getPoubelle() {
+        return poubelle;
+    }
+    public void setPoubelle(Poubelle poubelle) {
+        this.poubelle = poubelle;
     }
 }
