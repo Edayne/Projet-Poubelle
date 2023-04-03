@@ -1,9 +1,10 @@
-public class Utilisateur {
+public class Utilisateur{
     private int idUser; 
     private String nom;
     private int codeAcces;
     private int ptsFidelite;
     private Poubelle poubelle;
+
 
     //Getters et setters
     public getIdUser() {
@@ -35,5 +36,21 @@ public class Utilisateur {
     }
     public void setPoubelle(Poubelle poubelle) {
         this.poubelle = poubelle;
+    }
+
+    //Méthodes
+    public void convertirPtsFidelite(int ptsFidelite) {
+        this.ptsFidelite = ptsFidelite;
+        this.poubelle.convertirPtsFidelite(ptsFidelite);
+        this.poubelle.consulterHistorique();
+    }
+    public void consulterHistorique() {
+        System.out.println("Historique de l'utilisateur :");
+        System.out.println("Nom : " + getNom());
+        System.out.println("idUser : " + getIdUser());
+        System.out.println("Code Acces : " + getCodeAcces());
+        System.out.println("Pts Fidelite : " + getPtsFidelite());
+        System.out.println("Poubelle : " + getPoubelle());
+        System.out.println();
     }
 }
