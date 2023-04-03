@@ -1,4 +1,4 @@
-public class Règles {
+public class Regles {
     private int nbPoints;
 
     

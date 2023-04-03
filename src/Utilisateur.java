@@ -4,7 +4,7 @@ public class Utilisateur{
     private int codeAcces;
     private int ptsFidelite;
     private Poubelle poubelle;
-    private DéposerDéchets déposerDéchets;
+    private DeposerDechets[] deposerDechets;
 
 
 
@@ -81,6 +81,7 @@ public class Utilisateur{
     public void setDéposerDéchets(DéposerDéchets déposerDéchets) {
         this.déposerDéchets = déposerDéchets;
     }
+
     
 
     //Méthodes
@@ -95,5 +96,6 @@ public class Utilisateur{
         System.out.println("Code Acces : " + getCodeAcces());
         System.out.println("Pts Fidelite : " + getPtsFidelite());
         System.out.println("Poubelle : " + getPoubelle());
+        System.out.println("DéposerDéchets : " + getDéposer());
     }
 }

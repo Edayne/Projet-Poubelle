@@ -1,10 +1,10 @@
 import java.util.Date;
 
-public class DéposerDéchet {
+public class DeposerDechet {
     private Date date;
     private int qteDechet;
     private TypeDechets typeDechets;
-    private int ptsgagné;
+    private int ptsgagne;
 
 
     /**
@@ -50,17 +50,17 @@ public class DéposerDéchet {
     }
 
     /**
-     * @return int return the ptsgagné
+     * @return int return the ptsgagne
      */
-    public int getPtsgagné() {
-        return ptsgagné;
+    public int getPtsgagne() {
+        return ptsgagne;
     }
 
     /**
-     * @param ptsgagné the ptsgagné to set
+     * @param ptsgagne the ptsgagne to set
      */
-    public void setPtsgagné(int ptsgagné) {
-        this.ptsgagné = ptsgagné;
+    public void setPtsgagne(int ptsgagne) {
+        this.ptsgagne = ptsgagne;
     }
 
 }

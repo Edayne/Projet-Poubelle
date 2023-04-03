@@ -30,7 +30,7 @@ public class CentreDeTri {
     }
 
 
-    //Méthodes
+    //Methodes
     public void placerPoubelle() {
     }
     public void collecter() {
