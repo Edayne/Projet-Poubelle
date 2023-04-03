@@ -1,4 +1,4 @@
-public class Corbeille {
+public class Règles {
     private 
     private 
 }

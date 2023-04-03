@@ -1,4 +1,16 @@
+import java.lang.ProcessBuilder.Redirect.Type;
+
 public enum TypeDechets {
-    VERRE, RECYCL, PAPIERS, AUTRES;
-    
-};
+    VERRE(50), 
+    RECYCL(20), 
+    PAPIERS(15), 
+    AUTRES(45);
+    //hamdoulillah
+
+    private double masse; //unité arbitraire
+
+    TypeDechets(double masse) {
+        this.masse = masse;
+    }
+
+}
