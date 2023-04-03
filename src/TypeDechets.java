@@ -1,7 +1,15 @@
-public enum TypeDechets {
-    VERRE, RECYCL, PAPIERS, AUTRES;
+import java.lang.ProcessBuilder.Redirect.Type;
 
-    #nickel mon gate
-    //hamdoulillah
-    ffkfk
+public enum TypeDechets {
+    VERRE(50), 
+    RECYCL(20), 
+    PAPIERS(15), 
+    AUTRES(45);
+
+    private double masse; //unité arbitraire
+
+    TypeDechets(double masse) {
+        this.masse = masse;
+    }
+
 }
