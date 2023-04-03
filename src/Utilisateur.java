@@ -8,7 +8,7 @@ public class Utilisateur{
 
 
     //Getters et setters
-    public int getIdUser() {
+    /ublic int getIdUser() {
         return idUser;
     }
     public void setIdUser(int idUser) {
@@ -52,4 +52,19 @@ public class Utilisateur{
         System.out.println("Pts Fidelite : " + getPtsFidelite());
         System.out.println("Poubelle : " + getPoubelle());
     }
+
+    /**
+     * @return DéposerDéchets return the déposerDéchets
+     */
+    public DéposerDéchets getDéposerDéchets() {
+        return déposerDéchets;
+    }
+
+    /**
+     * @param déposerDéchets the déposerDéchets to set
+     */
+    public void setDéposerDéchets(DéposerDéchets déposerDéchets) {
+        this.déposerDéchets = déposerDéchets;
+    }
+
 }
