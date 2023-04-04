@@ -1,4 +1,5 @@
 public enum Produits {
+    /* Proposition des différentes offres */
     Offre( 'Alimentaire', 15),
     Offre2('Sport', 5),
     Offre3('HightTech',  5),
@@ -15,7 +16,7 @@ public enum Produits {
         this.catalog=catalog;
         this.reduction=reduction;
     }
-
+    
     /**
      * @return String return the catalog
      */

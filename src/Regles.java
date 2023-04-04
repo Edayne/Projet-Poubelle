@@ -2,7 +2,7 @@ public class Regles {
     private int PourcentageProduit;
     private Produits choixBon;
     
-    
+
 
 
     /**
