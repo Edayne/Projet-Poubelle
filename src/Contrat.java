@@ -42,6 +42,7 @@ public class Contrat {
 
     /* Renouveler concerne les valeurs d'une réduction pour un catalogue  */
     /* Et augmente la date de fin de 1 an */
+ 
     public void renouveler(Produits demande,Date datefin){
 
         Calendar calendar= Calendar.getInstance();
