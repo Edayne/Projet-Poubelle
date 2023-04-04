@@ -3,8 +3,8 @@ import java.util.Date;
 public class Contrat {
     private Date datedeb;
     private Date datefin;
-    private Produits produitConcerné;
-    private Regles demande;
+    private Produits demande;
+    private String produitConcerné=demande.getCatalog();
 
     /**
      * @return Date return the datedeb
