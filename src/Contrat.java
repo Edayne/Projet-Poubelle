@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Date;
 
 public class Contrat {
@@ -39,8 +40,14 @@ public class Contrat {
         this.produitConcerné = produitConcerné;
     }
 
-    public void renouveler(Produits demande){
-        /*  */
+    /* Renouveler concerne les valeurs d'une réduction pour un catalogue  */
+    /* Et augmente la date de fin de 1 an */
+    public void renouveler(Produits demande,Date datefin){
+
+        Calendar calendar= Calendar.getInstance();
+        calendar.setTime(datefin);
+        calendar.add(Calendar.YEAR,1);  /* Ajoute 1 an à l'instance calendar */
+        datefin = calendar.getTime();
      }
 
 }
