@@ -1,5 +1,6 @@
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Contrat {
     private Date datedeb;
@@ -49,6 +50,17 @@ public class Contrat {
         calendar.setTime(datefin);
         calendar.add(Calendar.YEAR,1);  /* Ajoute 1 an à l'instance calendar */
         datefin = calendar.getTime();
+        if (demande == null){
+            /* On ne change pas de tarif juste la date */
+        }
+        else {
+            Scanner sc;
+            sc = new Scanner(System.in);
+            System.out.print("Saisir un pourcentage de réduction (ex: 5 pour une réduction de 5%) : ");
+		    int value;
+		    value = sc.nextInt();
+            
+        }
      }
 
 }
