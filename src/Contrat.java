@@ -25,14 +25,6 @@ public class Contrat {
         this.datefin = datefin;
     }
 
-    public Produits getDemande() {
-        return demande;
-    }
-
-    public void setDemande(Produits demande) {
-        this.demande = demande;
-    }
-
     public String getProduitConcerné() {
         return produitConcerné;
     }
@@ -44,7 +36,7 @@ public class Contrat {
     /* Renouveler concerne les valeurs d'une réduction pour un catalogue  */
     /* Et augmente la date de fin de 1 an */
  
-    public void renouveler(Produits demande,Date datefin){
+    public void renouveler(Date datefin){
 
         Calendar calendar= Calendar.getInstance();
         calendar.setTime(datefin);
@@ -62,13 +54,13 @@ public class Contrat {
             for (String name: Produits.values()){
                 name=name.getCatalog();
                 if (rubrique.equals(name)){
-                    
+                    pourcentage=name.getReduction();
                     Scanner sc2;
                     sc2 = new Scanner(System.in);
                     System.out.print("Saisir un pourcentage de réduction (ex: 5 pour une réduction de 5%) : ");
                     int value;
                     value = sc2.nextInt();
-
+                    pourcentage=value;
                     sc2.close();
                 }
             }
