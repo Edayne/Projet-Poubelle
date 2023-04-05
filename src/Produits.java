@@ -17,30 +17,18 @@ public enum Produits {
         this.reduction=reduction;
     }
     
-    /**
-     * @return String return the catalog
-     */
     public String getCatalog() {
         return catalog;
     }
 
-    /**
-     * @param catalog the catalog to set
-     */
     public void setCatalog(String catalog) {
         this.catalog = catalog;
     }
 
-    /**
-     * @return int return the reduction
-     */
     public int getReduction() {
         return reduction;
     }
 
-    /**
-     * @param reduction the reduction to set
-     */
     public void setReduction(int reduction) {
         this.reduction = reduction;
     }
