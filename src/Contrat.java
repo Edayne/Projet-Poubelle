@@ -55,11 +55,11 @@ public class Contrat {
         }
         else {
             Scanner sc;
-            sc = new Scanner(System.in);
-            System.out.print("Saisir un pourcentage de réduction (ex: 5 pour une réduction de 5%) : ");
-		    int value;
-		    value = sc.nextInt();
-            
+            sc= new Scanner(System.in);
+            System.out.println("Veuillez saisir la rubrique du catalogue dont vous souhaitez modifier le bon d'achat : ");
+            String rubrique;
+            rubrique=sc.nextLine();
+            for (String name: )
         }
      }
 
