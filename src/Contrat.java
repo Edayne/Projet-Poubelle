@@ -59,7 +59,19 @@ public class Contrat {
             System.out.println("Veuillez saisir la rubrique du catalogue dont vous souhaitez modifier le bon d'achat : ");
             String rubrique;
             rubrique=sc.nextLine();
-            for (String name: )
+            for (String name: Produits.values()){
+                name=name.getCatalog();
+                if (rubrique.equals(name)){
+                    
+                    Scanner sc2;
+                    sc2 = new Scanner(System.in);
+                    System.out.print("Saisir un pourcentage de réduction (ex: 5 pour une réduction de 5%) : ");
+                    int value;
+                    value = sc2.nextInt();
+
+                    sc2.close();
+                }
+            }
         }
      }
 
