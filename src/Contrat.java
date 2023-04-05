@@ -24,7 +24,7 @@ public class Contrat {
     public void setDatefin(Date datefin) {
         this.datefin = datefin;
     }
-
+        
     public String getProduitConcerné() {
         return produitConcerné;
     }
