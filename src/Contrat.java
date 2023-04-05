@@ -64,6 +64,7 @@ public class Contrat {
                     sc2.close();
                 }
             }
+            sc.close();
         }
      }
 
