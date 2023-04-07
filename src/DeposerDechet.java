@@ -62,5 +62,11 @@ public class DeposerDechet {
     public void setPtsgagne(int ptsgagne) {
         this.ptsgagne = ptsgagne;
     }
+    public boolean checkTypeDechets(){
+        
+    }
+    public int calculerQteDechets(){
+        pass;
+    }
 
 }
