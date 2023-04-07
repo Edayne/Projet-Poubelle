@@ -39,6 +39,7 @@ public abstract class Poubelle {
         System.out.println("Poubelle n° "+ getIdPoubelle() + " pleine !");
     }
 
+    //Getters et setters
     public int getIdPoubelle() {
         return idPoubelle;
     }
@@ -78,7 +79,4 @@ public abstract class Poubelle {
     public void setTypeDechets(TypeDechets typeDechets) {
         this.typeDechets = typeDechets;
     }
-
-    
-
 }
