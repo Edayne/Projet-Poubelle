@@ -1,8 +1,8 @@
-public enum Produits {
+public enum Produit {
     /* Proposition des différentes offres */
     Offre("Alimentaire", 15),
     Offre2("Sport", 5),
-    Offre3("HightTech",  5),
+    Offre3("HighTech",  5),
     Offre4( "Maison",  5),
     Offre5( "Jardin",  5),
     Offre6( "Vetement",  5),
@@ -12,7 +12,7 @@ public enum Produits {
     private int reduction;
 
     
-    private Produits(String catalog,int reduction){
+    private Produit(String catalog,int reduction){
         this.catalog=catalog;
         this.reduction=reduction;
     }
