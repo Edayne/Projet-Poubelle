@@ -8,8 +8,6 @@ public class Utilisateur{
     private Poubelle poubelle;
     private ArrayList<DeposerDechet> listeDeposerDechets;
 
-
-
     //Getters et setters
     /**
      * @return int return the idUser
@@ -91,6 +89,7 @@ public class Utilisateur{
         this.ptsFidelite = ptsFidelite;
         this.poubelle.consulterHistorique();
     }
+    
     public void consulterHistorique() {
         System.out.println("Historique de l'utilisateur :");
         System.out.println("Nom : " + getNom());
