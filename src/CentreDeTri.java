@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class CentreDeTri {
+    private int id;
     private String nom;
     private String adresse;
     private ArrayList<Poubelle> listePoubelles;
@@ -38,6 +39,21 @@ public class CentreDeTri {
         this.listePoubelles = listePoubelles;
     }
 
+    /**
+     * @return int return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
     //Methodes
     public void placerPoubelle() {
     }
@@ -55,4 +71,6 @@ public class CentreDeTri {
 
     
 
+
+    
 }

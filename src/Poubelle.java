@@ -6,9 +6,8 @@ public abstract class Poubelle {
     private int capaciteMax;
     private int quantiteAct;
     private TypeDechets typeDechets;
-    private ArrayList<Utilisateur> listeUser; //Définit les utilisateurs possesseurs
-    //de cette poubelle
-    private CentreDeTri centreDeTri;
+    private ArrayList<Utilisateur> listeUser; //Définit les utilisateurs possesseurs de cette poubelle
+    private CentreDeTri centreDeTri; //Poubelle affiliée à un unique centre
 
     //Ajout d'un nouvel utilisateur en fin de liste
     public void addUser(Utilisateur user) {
@@ -37,6 +36,10 @@ public abstract class Poubelle {
     //Envoit une notification au centre de tri affilié
     public void envoyerNotifCentre(){
         System.out.println("Poubelle n° "+ getIdPoubelle() + " pleine !");
+    }
+
+    public void consulterHistorique() {
+
     }
 
     //Getters et setters
@@ -79,4 +82,22 @@ public abstract class Poubelle {
     public void setTypeDechets(TypeDechets typeDechets) {
         this.typeDechets = typeDechets;
     }
+
+    public ArrayList<Utilisateur> getListeUser() {
+        return listeUser;
+    }
+
+    public void setListeUser(ArrayList<Utilisateur> listeUser) {
+        this.listeUser = listeUser;
+    }
+
+    public CentreDeTri getCentreDeTri() {
+        return centreDeTri;
+    }
+
+    public void setCentreDeTri(CentreDeTri centreDeTri) {
+        this.centreDeTri = centreDeTri;
+    }
+
+    
 }
