@@ -5,6 +5,8 @@ public class DeposerDechet {
     private int qteDechet;
     private TypeDechets typeDechets;
     private int ptsgagne;
+    private Utilisateur user; //faut savoir quel utilisateur dépose les déchets pour récupérer l'historique notamment
+
 
 
     /**
