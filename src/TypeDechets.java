@@ -1,4 +1,3 @@
-import java.lang.ProcessBuilder.Redirect.Type;
 
 public enum TypeDechets {
     VERRE(50), 
