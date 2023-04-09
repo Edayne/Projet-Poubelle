@@ -44,7 +44,6 @@ public class DeposerDechet {
         
     }
     public int calculerQteDechets(){
-        pass;
     }
 
 }
