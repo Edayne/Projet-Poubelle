@@ -49,6 +49,6 @@ public class DeposerDechet {
     }
 
     public void ajoutPtsGagné(Utilisateur user,int ptsgagne){
-        user.setPtsFidelite(ptsgagne);
+        user.setPtsFidelite(user.getPtsFidelite() + ptsgagne);
     }
 }
