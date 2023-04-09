@@ -40,6 +40,14 @@ public class DeposerDechet {
     public void setPtsgagne(int ptsgagne) {
         this.ptsgagne = ptsgagne;
     }
+
+    public Utilisateur getUtilisateur(){
+        return user;
+    }
+
+    public void setUtilisateur(Utilisateur user){
+        this.user = user;
+    }
     
     public void calculerQteDechets(int qteDechet, TypeDechets typeDechets){
         ptsgagne=0;
