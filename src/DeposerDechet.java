@@ -40,10 +40,16 @@ public class DeposerDechet {
     public void setPtsgagne(int ptsgagne) {
         this.ptsgagne = ptsgagne;
     }
-    public boolean checkTypeDechets(){
-        
+    
+    public void calculerQteDechets(int qteDechet, TypeDechets typeDechets){
+        ptsgagne=0;
+        int masse = typeDechets.getMasse();
+        ptsgagne= masse*qteDechet;
+        setPtsgagne(ptsgagne);
     }
-    public int calculerQteDechets(){
+
+    public void ajoutPtsGagné(Utilisateur user,int ptsgagne){
+
     }
 
 }

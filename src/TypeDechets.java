@@ -6,10 +6,12 @@ public enum TypeDechets {
     PAPIERS(15), 
     AUTRES(45);
 
-    private double masse; //unite arbitraire
+    private int masse; //unite arbitraire
 
-    TypeDechets(double masse) {
+    TypeDechets(int masse) {
         this.masse = masse;
     }
-
+    public int getMasse() {
+        return masse;
+    }
 }
