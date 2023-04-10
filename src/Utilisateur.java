@@ -62,29 +62,34 @@ public class Utilisateur{
 
     //Méthodes
     public void convertirPtsFidelite(Utilisateur utilisateur) {
-    int ptsFidelite = utilisateur.getPtsFidelite();
-    Contrat contrat = commerce.getContrat();
-    Produit produitConcerné = contrat.getProduitConcerné();
-    int reduction = produitConcerné.getReduction();
-    int reductionAppliquee = ptsFidelite / 10 * reduction;
-    utilisateur.setPtsFidelite(ptsFidelite % 10);
-    utilisateur.ajouterReduction(reductionAppliquee);
-    System.out.println("Vous avez utilisé " + reductionAppliquee + " points de fidélité pour bénéficier d'une réduction de " + reductionAppliquee + "% sur votre prochain achat de produits " + produitConcerné.getCatalog());
+        int ptsFidelite = utilisateur.getPtsFidelite();
+        Contrat contrat = commerce.getContrat();
+        Produit produitConcerné = contrat.getProduitConcerné();
+        int reduction = produitConcerné.getReduction();
+        int reductionAppliquee = ptsFidelite / 10 * reduction;
+        utilisateur.setPtsFidelite(ptsFidelite % 10);
+        utilisateur.ajouterReduction(reductionAppliquee);
+        System.out.println("Vous avez utilisé " + 
+            reductionAppliquee + 
+            " points de fidélité pour bénéficier d'une réduction de " + 
+            reductionAppliquee + 
+            "% sur votre prochain achat de produits " + 
+            produitConcerné.getCatalog());
 }
 
 }
 
     
     public void consulterHistorique() {
-    System.out.println("Historique de l'utilisateur :");
-    System.out.println("Nom : " + getNom());
-    System.out.println("idUser : " + getIdUser());
-    System.out.println("Code Acces : " + getCodeAcces());
-    System.out.println("Pts Fidelite : " + getPtsFidelite());
-    System.out.println("Poubelle : " + getPoubelle());
-    System.out.println("Déchets déposés :");
-    for (DeposerDechet deposerDechet : getListeDeposerDechets()) {
-        System.out.println(deposerDechet);
+        System.out.println("Historique de l'utilisateur :\n");
+        System.out.println("Nom : " + getNom());
+        System.out.println("idUser : " + getIdUser());
+        System.out.println("Code Acces : " + getCodeAcces());
+        System.out.println("Pts Fidelite : " + getPtsFidelite());
+        System.out.println("Poubelle : " + getPoubelle());
+        System.out.println("Déchets déposés :");
+        for (DeposerDechet deposerDechet : getListeDeposerDechets()) {
+            System.out.println(deposerDechet);
     }
 }
 
