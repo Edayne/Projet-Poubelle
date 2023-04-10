@@ -33,6 +33,8 @@ public class Main {
 		int i=user2.getPtsFidelite();
 		System.out.println("Le nombre de point de fidelité après ajout est :" + i);
 
+
+		// Contrat Permet de verifier si la méthode renouveler fonctionne
 		Contrat contrat = new Contrat();
 		contrat.setDatedeb(new Date());
 		Date date = new Date();
