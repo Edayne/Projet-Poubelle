@@ -49,7 +49,7 @@ public class Main {
 		System.out.println(contrat.getProduitConcerné().toString());
 		contrat.renouveler(datefin);
 		System.out.println(contrat.getDatefin().toString());
-
+		System.out.println(contrat.getProduitConcerné().toString());
 	}	
 
 }
