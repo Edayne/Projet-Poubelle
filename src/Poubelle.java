@@ -42,6 +42,13 @@ public abstract class Poubelle {
 
     }
 
+    public void estPleine() {
+        return quantiteAct >= capaciteMax;
+    
+    public void vider() {
+        quantiteAct = 0;
+    }
+
     //Getters et setters
     public int getIdPoubelle() {
         return idPoubelle;
