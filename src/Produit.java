@@ -31,5 +31,8 @@ public enum Produit {
     public void setReduction(int reduction) {
         this.reduction = reduction;
     }
+    public String toString() {
+        return this.name() + ": (" + this.catalog + ", " + this.reduction + ")";
+    }
 
 }
