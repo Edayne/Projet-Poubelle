@@ -45,7 +45,7 @@ public class Main {
 		contrat.setProduitConcerné(Produit.Offre);
 		System.out.println(datefin.toString());
 		contrat.renouveler(datefin);
-		System.out.println(datefin);
+		System.out.println(contrat.getDatefin().toString());
 	}	
 
 }
