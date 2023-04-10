@@ -66,8 +66,8 @@ public class Utilisateur{
     Contrat contrat = commerce.getContrat();
     Produit produitConcerné = contrat.getProduitConcerné();
     int reduction = produitConcerné.getReduction();
-    int reductionAppliquee = ptsFidelite / 10 * reduction;
-    utilisateur.setPtsFidelite(ptsFidelite % 10);
+    int reductionAppliquee = ptsFidelite / 100 * reduction;
+    utilisateur.setPtsFidelite(ptsFidelite % 100);
     utilisateur.ajouterReduction(reductionAppliquee);
     System.out.println("Vous avez utilisé " + reductionAppliquee + " points de fidélité pour bénéficier d'une réduction de " + reductionAppliquee + "% sur votre prochain achat de produits " + produitConcerné.getCatalog());
 }
