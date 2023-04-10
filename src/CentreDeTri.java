@@ -38,10 +38,31 @@ public class CentreDeTri {
 
 
     //Methodes
-    public void placerPoubelle() {
+    public void placerPoubelle(Poubelle poubelle, String adresse){
+        for (Poubelle p : listePoubelles) {
+            if (p.getAdresse().equals(adresse)){
+                System.out.println("La poubelle existe déjà");
+                return;
+
+            }
+        }
+        poubelle.setAdresse(adresse);
+        listePoubelles.add(poubelle);
+        System.out.println("La poubelle a été placée à l'adresse " + adresse);
     }
+    
     public void collecter() {
+    for (Poubelle poubelle : listePoubelles) {
+        if (poubelle.isPleine()) {
+            // collecte de la poubelle
+            poubelle.vider();
+
+            // enregistrement dans le journal de collecte
+            System.out.println("Poubelle " + poubelle.getId() + " collectée au centre de tri " + nom);
+        }
     }
+}
+
     public void realiserStats() {
     }
 
