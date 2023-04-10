@@ -47,7 +47,7 @@ public abstract class Poubelle {
     }
     
     public void vider() {
-        quantiteAct = 0;
+        this.quantiteAct = 0;
     }
 
     //Getters et setters
