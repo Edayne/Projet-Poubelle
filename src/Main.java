@@ -11,8 +11,8 @@ public class Main {
         user1.setPtsFidelite(50);
         // user1.setPoubelle(new Poubelle());
         user1.setListeDeposerDechets(new ArrayList<>());
-		
 
+		// User2 Utilisé pour tester la partie Utilisateur/DéposerDéchets
         Utilisateur user2 = new Utilisateur();
         user2.setIdUser(2);
         user2.setNom("Bob");
@@ -20,6 +20,9 @@ public class Main {
         user2.setPtsFidelite(20);
         // user2.setPoubelle(new Poubelle());
         user2.setListeDeposerDechets(new ArrayList<>());
+
+		DéposerDéchets dechetUser2 = new DeposerDechet();
+		
 	}
 
 }
