@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
@@ -56,5 +57,24 @@ public class Main {
 		System.out.println(contrat.getDatefin().toString());
 		System.out.println(contrat.getProduitConcerné().toString());
 		*/
-	}	
+		System.out.println(this.readData());
+	}
+
+	//Fonction qui permet la lecture de fichiers csv/txt avec un délimiteur ","
+	public ArrayList<String[]> readData() throws IOException { 
+        int count = 0;
+        String file = "../donnees/utilisateur.txt";
+        ArrayList<String[]> content = new ArrayList<>();
+
+        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                content.add(line.split(","));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichier utilisateur.txt introuvable !");
+        }
+
+        return content;
+    }
 }
