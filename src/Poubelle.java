@@ -42,8 +42,9 @@ public abstract class Poubelle {
 
     }
 
-    public void estPleine() {
-        return quantiteAct >= capaciteMax;
+    public boolean estPleine() {
+        return (quantiteAct >= capaciteMax);
+    }
     
     public void vider() {
         quantiteAct = 0;
