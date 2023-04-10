@@ -76,15 +76,15 @@ public class Utilisateur{
 
     
     public void consulterHistorique() {
-    System.out.println("Historique de l'utilisateur :");
-    System.out.println("Nom : " + getNom());
-    System.out.println("idUser : " + getIdUser());
-    System.out.println("Code Acces : " + getCodeAcces());
-    System.out.println("Pts Fidelite : " + getPtsFidelite());
-    System.out.println("Poubelle : " + getPoubelle());
-    System.out.println("Déchets déposés :");
-    for (DeposerDechet deposerDechet : getListeDeposerDechets()) {
-        System.out.println(deposerDechet);
+        System.out.println("Historique de l'utilisateur :\n");
+        System.out.println("Nom : " + getNom());
+        System.out.println("idUser : " + getIdUser());
+        System.out.println("Code Acces : " + getCodeAcces());
+        System.out.println("Pts Fidelite : " + getPtsFidelite());
+        System.out.println("Poubelle : " + getPoubelle());
+        System.out.println("Déchets déposés :");
+        for (DeposerDechet deposerDechet : getListeDeposerDechets()) {
+            System.out.println(deposerDechet);
     }
 }
 
