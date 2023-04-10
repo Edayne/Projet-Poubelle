@@ -22,6 +22,9 @@ public class Main {
         user2.setCodeAcces(5678);
         user2.setPtsFidelite(20);
 
+		// Enlever les /*  */ Pour essayer les méthodes de DeposerDechet
+		
+		/* 
 		DeposerDechet dechetUser2 = new DeposerDechet();
 		dechetUser2.setDate(new Date());
 		dechetUser2.setQteDechet(10);
@@ -32,9 +35,11 @@ public class Main {
 		dechetUser2.ajoutPtsGagné(user2,dechetUser2.getPtsgagne());
 		int i=user2.getPtsFidelite();
 		System.out.println("Le nombre de point de fidelité après ajout est :" + i);
+		*/
 
+		// Enlever les /* */ Pour essayer les méthodes de Contrat
 
-		// Contrat Permet de verifier si la méthode renouveler fonctionne
+		/* 
 		Contrat contrat = new Contrat();
 		contrat.setDatedeb(new Date());
 		Date date = new Date();
@@ -52,6 +57,6 @@ public class Main {
 		contrat.renouveler(datefin);
 		System.out.println(contrat.getDatefin().toString());
 		System.out.println(contrat.getProduitConcerné().toString());
+		*/
 	}	
-
 }
