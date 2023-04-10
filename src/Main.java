@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Calendar;
+
 
 public class Main {
 
@@ -33,9 +35,15 @@ public class Main {
 
 		Contrat contrat = new Contrat();
 		contrat.setDatedeb(new Date());
-		contrat.setDatefin(new Date());
+		Date date = new Date();
+		// Permet de fixer la date de fin à dans un an
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.add(Calendar.YEAR, 1);
+		Date datefin = calendar.getTime();
+		contrat.setDatefin(datefin);
 		contrat.setProduitConcerné(Produit.Offre);
-		
+
 	}	
 
 }
