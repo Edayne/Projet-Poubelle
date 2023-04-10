@@ -30,6 +30,12 @@ public class Main {
 		dechetUser2.ajoutPtsGagné(user2,dechetUser2.getPtsgagne());
 		int i=user2.getPtsFidelite();
 		System.out.println("Le nombre de point de fidelité après ajout est :" + i);
+
+		Contrat contrat = new Contrat();
+		contrat.setDatedeb(new Date());
+		contrat.setDatefin(new Date());
+		contrat.setProduitConcerné(Produit.Offre);
+		
 	}	
 
 }

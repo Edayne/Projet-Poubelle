@@ -29,9 +29,10 @@ public class Contrat {
         return produitConcerné;
     }
    
-    public void setProduitConcerné(String produitConcerné) {
-        this.produitConcerné = produitConcerné;
+    public void setProduitConcerné(Produit offre) {
+        this.produitConcerné = offre;
     }
+
 
     /* Renouveler concerne les valeurs d'une réduction pour un catalogue  */
     /* Et augmente la date de fin de 1 an */
