@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Contrat {
     private Date datedeb;
     private Date datefin;
-    private Produit demande;
-    private String produitConcerné=demande.getCatalog();
+    private Produit produitConcerné;
 
 
     public Date getDatedeb() {
@@ -25,7 +24,7 @@ public class Contrat {
         this.datefin = datefin;
     }
         
-    public String getProduitConcerné() {
+    public Produit getProduitConcerné() {
         return produitConcerné;
     }
    
