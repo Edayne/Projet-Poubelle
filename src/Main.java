@@ -43,6 +43,7 @@ public class Main {
 		Date datefin = calendar.getTime();
 		contrat.setDatefin(datefin);
 		contrat.setProduitConcerné(Produit.Offre);
+		System.out.println(datefin.toString());
 		
 	}	
 
