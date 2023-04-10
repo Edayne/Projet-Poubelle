@@ -39,7 +39,7 @@ public abstract class Poubelle {
     }
 
     public void consulterHistorique() {
-
+        
     }
 
     public boolean estPleine() {
