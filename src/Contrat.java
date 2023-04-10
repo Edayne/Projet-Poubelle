@@ -41,7 +41,7 @@ public class Contrat {
         calendar.setTime(datefin);
         calendar.add(Calendar.YEAR, 1);  /* Ajoute 1 an à l'instance calendar */
         datefin = calendar.getTime();
-        
+        setDatefin(datefin);
             Scanner sc;
             sc= new Scanner(System.in);
             System.out.println("Veuillez saisir la rubrique du catalogue dont vous souhaitez modifier le bon d'achat : ");
