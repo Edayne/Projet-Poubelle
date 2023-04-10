@@ -9,7 +9,11 @@ public class Utilisateur{
     private ArrayList<DeposerDechet> listeDeposerDechets;
     private ArrayList<Produit> listeProduits;
 
- 
+    public Utilisateur(int idUser, String nom) {
+        this.idUser = idUser;
+        this.nom = nom;
+    }
+
     public int getIdUser() {
         return idUser;
     }

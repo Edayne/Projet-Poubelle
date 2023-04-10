@@ -48,9 +48,4 @@ public class CentreDeTri {
     public ArrayList<Poubelle> getListePoubelles() {
         return listePoubelles;
     }
-
-    
-
-
-    
 }

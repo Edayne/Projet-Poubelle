@@ -21,6 +21,8 @@ public class Main {
         user2.setNom("Bob");
         user2.setCodeAcces(5678);
         user2.setPtsFidelite(20);
+		// user2.setPoubelle(new Poubelle());
+		user2.setListeDeposerDechets(new ArrayList<>());
 
 		// Enlever les /*  */ Pour essayer les méthodes de DeposerDechet
 		
