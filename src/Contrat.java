@@ -6,7 +6,6 @@ public class Contrat {
     private Date datedeb;
     private Date datefin;
     private Produit produitConcerné;
-    private Commerce commerce;
 
 
     public Date getDatedeb() {
@@ -33,13 +32,6 @@ public class Contrat {
         this.produitConcerné = offre;
     }
 
-    public Commerce getCommerce(){
-        return commerce;
-    }
-    
-    public void setCommerce(Commerce commerce){
-        this.commerce=commerce;
-    }
 
 
     /* Renouveler concerne les valeurs d'une réduction pour un catalogue  */
