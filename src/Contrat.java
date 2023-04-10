@@ -11,7 +11,7 @@ public class Contrat {
 
     public Date getDatedeb() {
         return datedeb;
-    }
+    }datedeb
 
     public void setDatedeb(Date datedeb) {
         this.datedeb = datedeb;
@@ -42,10 +42,7 @@ public class Contrat {
         calendar.setTime(datefin);
         calendar.add(Calendar.YEAR, 1);  /* Ajoute 1 an à l'instance calendar */
         datefin = calendar.getTime();
-        if (demande == null){
-            /* On ne change pas de tarif juste la date */
-        }
-        else {
+        
             Scanner sc;
             sc= new Scanner(System.in);
             System.out.println("Veuillez saisir la rubrique du catalogue dont vous souhaitez modifier le bon d'achat : ");
@@ -67,6 +64,5 @@ public class Contrat {
             }
             sc.close();
         }
-     }
 
 }
