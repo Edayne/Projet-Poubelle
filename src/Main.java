@@ -4,7 +4,7 @@ import java.util.Date;
 public class Main {
 
 	public static void main(String[] args) {
-		// Création de 2 utilisateur pour faire les tests des fonctions
+		// Création de d'utilisateur pour faire les tests des fonctions
 		Utilisateur user1 = new Utilisateur();
         user1.setIdUser(1);
         user1.setNom("Alice");
@@ -19,8 +19,6 @@ public class Main {
         user2.setNom("Bob");
         user2.setCodeAcces(5678);
         user2.setPtsFidelite(20);
-        // user2.setPoubelle(new Poubelle());
-        user2.setListeDeposerDechets(new ArrayList<>());
 
 		DeposerDechet dechetUser2 = new DeposerDechet();
 		dechetUser2.setDate(new Date());
@@ -32,6 +30,6 @@ public class Main {
 		dechetUser2.ajoutPtsGagné(user2,dechetUser2.getPtsgagne());
 		int i=user2.getPtsFidelite();
 		System.out.println("Le nombre de point de fidelité après ajout est :" + i);
-	}
+	}	
 
 }
