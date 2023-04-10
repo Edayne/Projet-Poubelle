@@ -47,6 +47,8 @@ public class Main {
 		contrat.setProduitConcerné(Produit.Offre);
 		System.out.println(datefin.toString());
 		System.out.println(contrat.getProduitConcerné().toString());
+		// Renouveler augmente de 1 an la date de fin du contrat 
+		// Renouveler permet de modifier la valeur d'une reduction
 		contrat.renouveler(datefin);
 		System.out.println(contrat.getDatefin().toString());
 		System.out.println(contrat.getProduitConcerné().toString());
