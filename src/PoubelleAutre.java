@@ -1,5 +1,5 @@
 public class PoubelleAutre extends Poubelle{
-    private int poids;
+    private int poidsIndiv; //correspond au poids d'un déchet de ce type
 
     public PoubelleAutre(int poids) {
         
@@ -10,10 +10,10 @@ public class PoubelleAutre extends Poubelle{
     }
 
     public int getPoids() {
-        return poids;
+        return poidsIndiv;
     }
     public void setPoids(int poids) {
-        this.poids = poids;
+        this.poidsIndiv = poids;
     }
     
 }
