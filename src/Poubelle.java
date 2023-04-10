@@ -39,14 +39,15 @@ public abstract class Poubelle {
     }
 
     public void consulterHistorique() {
-
+        
     }
 
-    public void estPleine() {
-        return quantiteAct >= capaciteMax;
+    public boolean estPleine() {
+        return (quantiteAct >= capaciteMax);
+    }
     
     public void vider() {
-        quantiteAct = 0;
+        this.quantiteAct = 0;
     }
 
     //Getters et setters

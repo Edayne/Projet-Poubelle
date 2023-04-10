@@ -1,0 +1,3 @@
+idUser,nom,codeAcces,ptsFidelite
+1,"Alice",1234,50
+2,"Bob",5678,20

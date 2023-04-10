@@ -1,4 +1,10 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.imageio.plugins.tiff.ExifTIFFTagSet;
 
 public class Utilisateur{
     private int idUser; 
@@ -85,10 +91,28 @@ public class Utilisateur{
         System.out.println("Code Acces : " + getCodeAcces());
         System.out.println("Pts Fidelite : " + getPtsFidelite());
         System.out.println("Poubelle : " + getPoubelle());
+
         System.out.println("Déchets déposés :");
         for (DeposerDechet deposerDechet : getListeDeposerDechets()) {
             System.out.println(deposerDechet);
-    }
+        }
     }
 
+    public ArrayList<String[]> readData() throws IOException { 
+        int count = 0;
+        String file = "../donnees/utilisateur.txt";
+        ArrayList<String[]> content = new ArrayList<>();
+        
+        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                content.add(line.split(","));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichier utilisateur.txt introuvable !");
+        }
+
+        return content;
+    }
+    
 }
