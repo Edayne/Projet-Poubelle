@@ -102,6 +102,7 @@ public class Utilisateur{
         int count = 0;
         String file = "../donnees/utilisateur.txt";
         ArrayList<String[]> content = new ArrayList<>();
+        
         try(BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line = "";
             while ((line = br.readLine()) != null) {
@@ -110,6 +111,7 @@ public class Utilisateur{
         } catch (FileNotFoundException e) {
             System.out.println("Fichier utilisateur.txt introuvable !");
         }
+
         return content;
     }
     
