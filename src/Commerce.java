@@ -1,6 +1,6 @@
 public class Commerce {
     private String nom;
-    
+    private Contrat contrat;
     
     public String getNom() {
         return nom;
@@ -9,5 +9,12 @@ public class Commerce {
     public void setNom(String nom) {
         this.nom = nom;
     }
+    
+    public Contrat getContrat(){
+        return contrat;
+    }
 
+    public void setContrat(Contrat contrat){
+        this.contrat=contrat;
+    }
 }

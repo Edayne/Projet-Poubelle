@@ -6,6 +6,7 @@ public class Contrat {
     private Date datedeb;
     private Date datefin;
     private Produit produitConcerné;
+    private Commerce commerce;
 
 
     public Date getDatedeb() {
@@ -30,6 +31,14 @@ public class Contrat {
    
     public void setProduitConcerné(Produit offre) {
         this.produitConcerné = offre;
+    }
+
+    public Commerce getCommerce(){
+        return commerce;
+    }
+    
+    public void setCommerce(Commerce commerce){
+        this.commerce=commerce;
     }
 
 
