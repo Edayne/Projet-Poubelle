@@ -11,7 +11,7 @@ public class Contrat {
 
     public Date getDatedeb() {
         return datedeb;
-    }datedeb
+    }
 
     public void setDatedeb(Date datedeb) {
         this.datedeb = datedeb;
