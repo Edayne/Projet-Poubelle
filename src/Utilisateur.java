@@ -73,6 +73,7 @@ public class Utilisateur{
     //Méthodes
     public void convertirPtsFidelite(Utilisateur utilisateur) {
         int ptsFidelite = utilisateur.getPtsFidelite();
+        Commerce commerce = new Commerce();
         Contrat contrat = commerce.getContrat();
         Produit produitConcerné = contrat.getProduitConcerné();
         int reduction = produitConcerné.getReduction();
