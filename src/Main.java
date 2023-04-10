@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Main {
 
@@ -21,8 +22,16 @@ public class Main {
         // user2.setPoubelle(new Poubelle());
         user2.setListeDeposerDechets(new ArrayList<>());
 
-		DéposerDéchets dechetUser2 = new DeposerDechet();
-		
+		DeposerDechet dechetUser2 = new DeposerDechet();
+		dechetUser2.setDate(new Date());
+		dechetUser2.setQteDechet(10);
+		dechetUser2.setTypeDechets(TypeDechets.VERRE);
+		dechetUser2.setUtilisateur(user2);
+		dechetUser2.setPtsgagne(0);
+		dechetUser2.calculerQteDechets(dechetUser2.getQteDechet(), dechetUser2.getTypeDechets());
+		dechetUser2.ajoutPtsGagné(user2,dechetUser2.getPtsgagne());
+		int i=dechetUser2.getPtsgagne();
+		System.out.println("Le nombre de point de fidelité après ajout est :" + i);
 	}
 
 }
