@@ -57,6 +57,7 @@ public class Main {
 		System.out.println(contrat.getDatefin().toString());
 		System.out.println(contrat.getProduitConcerné().toString());
 		*/
+		System.out.println("Fin de l'éxécution.");
 	}
 
 	//Fonction qui permet la lecture de fichiers csv/txt avec un délimiteur ","
