@@ -1,4 +1,10 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.imageio.plugins.tiff.ExifTIFFTagSet;
 
 public class Utilisateur{
     private int idUser; 
@@ -66,17 +72,16 @@ public class Utilisateur{
 
     //Méthodes
     public void convertirPtsFidelite(Utilisateur utilisateur) {
-    int ptsFidelite = utilisateur.getPtsFidelite();
-    Contrat contrat = commerce.getContrat();
-    Produit produitConcerné = contrat.getProduitConcerné();
-    int reduction = produitConcerné.getReduction();
-    int reductionAppliquee = ptsFidelite / 100 * reduction;
-    utilisateur.setPtsFidelite(ptsFidelite % 100);
-    utilisateur.ajouterReduction(reductionAppliquee);
-    System.out.println("Vous avez utilisé " + reductionAppliquee + " points de fidélité pour bénéficier d'une réduction de " + reductionAppliquee + "% sur votre prochain achat de produits " + produitConcerné.getCatalog());
-}
+        int ptsFidelite = utilisateur.getPtsFidelite();
+        Contrat contrat = commerce.getContrat();
+        Produit produitConcerné = contrat.getProduitConcerné();
+        int reduction = produitConcerné.getReduction();
+        int reductionAppliquee = ptsFidelite / 100 * reduction;
+        utilisateur.setPtsFidelite(ptsFidelite % 100);
+        System.out.println("Vous avez utilisé " + reductionAppliquee + " points de fidélité pour bénéficier d'une réduction de " + reductionAppliquee + "% sur votre prochain achat de produits " + produitConcerné.getCatalog());
+    }
 
-}
+
 
     
     public void consulterHistorique() {
@@ -86,9 +91,26 @@ public class Utilisateur{
         System.out.println("Code Acces : " + getCodeAcces());
         System.out.println("Pts Fidelite : " + getPtsFidelite());
         System.out.println("Poubelle : " + getPoubelle());
+
         System.out.println("Déchets déposés :");
         for (DeposerDechet deposerDechet : getListeDeposerDechets()) {
             System.out.println(deposerDechet);
+        }
     }
-}
 
+    public ArrayList<String[]> readData() throws IOException { 
+        int count = 0;
+        String file = "../donnees/utilisateur.txt";
+        ArrayList<String[]> content = new ArrayList<>();
+        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                content.add(line.split(","));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichier utilisateur.txt introuvable !");
+        }
+        return content;
+    }
+    
+}

@@ -7,18 +7,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		// Création de d'utilisateur pour faire les tests des fonctions
-		Utilisateur user1 = new Utilisateur();
-        user1.setIdUser(1);
-        user1.setNom("Alice");
+		Utilisateur user1 = new Utilisateur(1, "Alice");
         user1.setCodeAcces(1234);
         user1.setPtsFidelite(50);
         // user1.setPoubelle(new Poubelle());
         user1.setListeDeposerDechets(new ArrayList<>());
 
 		// User2 Utilisé pour tester la partie Utilisateur/DéposerDéchets
-        Utilisateur user2 = new Utilisateur();
-        user2.setIdUser(2);
-        user2.setNom("Bob");
+        Utilisateur user2 = new Utilisateur(2, "Bob");
         user2.setCodeAcces(5678);
         user2.setPtsFidelite(20);
 		// user2.setPoubelle(new Poubelle());
