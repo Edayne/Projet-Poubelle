@@ -6,7 +6,7 @@ public class CentreDeTri {
     private String nom;
     private String adresse;
     private ArrayList<Poubelle> listePoubelles;
-
+    private HashMap<TypeDechets, Integer> stats;
 
     
     public String getNom() {

@@ -4,7 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.imageio.plugins.tiff.ExifTIFFTagSet;
 
 public class Utilisateur{
     private int idUser; 
@@ -13,7 +12,7 @@ public class Utilisateur{
     private int ptsFidelite;
     private Poubelle poubelle;
     private ArrayList<DeposerDechet> listeDeposerDechets;
-    private ArrayList<Produit> listeProduits;
+    /* private ArrayList<Produit> listeProduits; */
 
     public Utilisateur(int idUser, String nom) {
         this.idUser = idUser;
@@ -73,6 +72,7 @@ public class Utilisateur{
     //Méthodes
     public void convertirPtsFidelite(Utilisateur utilisateur) {
         int ptsFidelite = utilisateur.getPtsFidelite();
+        Commerce commerce = new Commerce();
         Contrat contrat = commerce.getContrat();
         Produit produitConcerné = contrat.getProduitConcerné();
         int reduction = produitConcerné.getReduction();
@@ -80,9 +80,6 @@ public class Utilisateur{
         utilisateur.setPtsFidelite(ptsFidelite % 100);
         System.out.println("Vous avez utilisé " + reductionAppliquee + " points de fidélité pour bénéficier d'une réduction de " + reductionAppliquee + "% sur votre prochain achat de produits " + produitConcerné.getCatalog());
     }
-
-
-
     
     public void consulterHistorique() {
         System.out.println("Historique de l'utilisateur :\n");
@@ -98,19 +95,5 @@ public class Utilisateur{
         }
     }
 
-    public ArrayList<String[]> readData() throws IOException { 
-        int count = 0;
-        String file = "../donnees/utilisateur.txt";
-        ArrayList<String[]> content = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String line = "";
-            while ((line = br.readLine()) != null) {
-                content.add(line.split(","));
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Fichier utilisateur.txt introuvable !");
-        }
-        return content;
-    }
     
 }
