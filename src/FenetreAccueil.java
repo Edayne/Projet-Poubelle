@@ -34,8 +34,9 @@ public class FenetreAccueil extends Application {
 		// Redirection des buttons vers d'autre scene 
 		particuliers.setOnAction(e -> primaryStage.setScene(Particuliers));
 		commerce.setOnAction(e -> primaryStage.setScene(Commerce));
-		centreTri.setOnAction(e -> primaryStage.setScene(centreTri));
-		
+		centreTri.setOnAction(e -> primaryStage.setScene(CentreTri));
+
+
 	    primaryStage.show();
 	}
 	
