@@ -12,7 +12,7 @@ public class Utilisateur{
     private int ptsFidelite;
     private Poubelle poubelle;
     private ArrayList<DeposerDechet> listeDeposerDechets;
-    /* private ArrayList<Produit> listeProduits; */
+    private ArrayList<Produit> listeProduits;
 
     public Utilisateur(int idUser, String nom) {
         this.idUser = idUser;
