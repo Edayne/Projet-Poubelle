@@ -49,9 +49,11 @@ public class FenetreAccueil extends Application {
 		//
 		Button consulterHistoriqueBtn = new Button("Consulter Historique");
         Button convertirPtsBtn = new Button("Convertir Pts");
+		// Button ajoutPts = new Button("Point Gagné"); 
+
 
 		VBox vbox = (VBox) particuliers.getRoot();
-        vbox.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
+        vbox.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn/*,ajoutPts */);
 
         consulterHistoriqueBtn.setOnAction(e -> {
 			// Ajouter la méthode pour consulter l'histo
@@ -59,6 +61,9 @@ public class FenetreAccueil extends Application {
         convertirPtsBtn.setOnAction(e -> {
 			// Ajouter la méthode pour consulter l'histo
         });
+		/* ajoutPts.setOnAction(e -> {
+			Ajouter les méthodes pour calculer qteDechet + ajoutPts
+		}) */
 
 		//
 		//
