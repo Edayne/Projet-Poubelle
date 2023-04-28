@@ -1,0 +1,11 @@
+{
+    "java.project.explorer.showNonJavaResources": false,
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar"
+        ],
+        "exclude": [
+            "/Projet Poubelle/lib"
+        ]
+    }
+}
