@@ -30,17 +30,57 @@ public class FenetreAccueil extends Application {
 		
 	    Scene scene = new Scene(root, 500, 300);
 	    primaryStage.setScene(scene);
-		// Définition des Scenes des diff personne
 
-		Scene Particuliers = new Scene(root,500,300);
-		Scene CentreTri = new Scene(root,500,300);
-		Scene Commerce = new Scene(root,500,300);
+		// Définition des Scenes des diff personne
+		Scene Particuliers = new Scene(new VBox(),500,300);
+		Scene CentreTri = new Scene(new VBox(),500,300);
+		Scene Commerce = new Scene(new VBox(),500,300);
 	    
-		
+
 		// Redirection des buttons vers d'autre scene 
 		particuliers.setOnAction(e -> primaryStage.setScene(Particuliers));
 		commerce.setOnAction(e -> primaryStage.setScene(Commerce));
 		centreTri.setOnAction(e -> primaryStage.setScene(CentreTri));
+
+		// 
+		//
+		// Ajout des boutons du Particulier avec leur action (Potentiellement à déplacer dans une autre classe)
+		//
+		//
+		Button consulterHistoriqueBtn = new Button("Consulter Historique");
+        Button convertirPtsBtn = new Button("Convertir Pts");
+
+		VBox vbox = (VBox) particuliers.getRoot();
+        vbox.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
+
+        consulterHistoriqueBtn.setOnAction(e -> {
+			// Ajouter la méthode pour consulter l'histo
+        });
+        convertirPtsBtn.setOnAction(e -> {
+			// Ajouter la méthode pour consulter l'histo
+        });
+
+		//
+		//
+		// Ajout des boutons du Centre de tri
+		//
+		//
+		Button placerPoubelle = new Button("Placer une poubelle"); 
+		Button collecter = new Button("Collecter");
+		Button realiserStat = new Button("Réaliser");
+
+		VBox vbox = (VBox) CentreTri.getRoot();
+        vbox.getChildren().addAll(placerPoubelle, collecter,realiserStat);
+
+        placerPoubelle.setOnAction(e -> {
+			// Ajouter la méthode pour placer la poubelle
+        });
+        collecter.setOnAction(e -> {
+			// Ajouter la méthode pour collecter
+        });
+		realiserStat.setOnAction(e -> {
+			// Ajouter la méthode pour faire stat
+		});
 
 		
 
