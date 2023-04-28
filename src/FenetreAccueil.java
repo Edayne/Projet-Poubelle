@@ -30,11 +30,11 @@ public class FenetreAccueil extends Application {
 		
 	    Scene scene = new Scene(root, 500, 300);
 	    primaryStage.setScene(scene);
-	    
+	    /* 
 	    Scene utilisateur = new Scene(root, 500,300);
 		Scene commerce = new Scene(root,500,300);
 		Scene centreTri = new Scene(root,500,300);
-	    
+	    */
 	    primaryStage.show();
 	}
 	
