@@ -30,12 +30,18 @@ public class FenetreAccueil extends Application {
 		
 	    Scene scene = new Scene(root, 500, 300);
 	    primaryStage.setScene(scene);
+		// Définition des Scenes des diff personne
+
+		Scene Particuliers = new Scene(root,500,300);
+		Scene CentreTri = new Scene(root,500,300);
+		Scene Commerce = new Scene(root,500,300);
 	    
 		// Redirection des buttons vers d'autre scene 
 		particuliers.setOnAction(e -> primaryStage.setScene(Particuliers));
 		commerce.setOnAction(e -> primaryStage.setScene(Commerce));
 		centreTri.setOnAction(e -> primaryStage.setScene(CentreTri));
 
+		
 
 	    primaryStage.show();
 	}
