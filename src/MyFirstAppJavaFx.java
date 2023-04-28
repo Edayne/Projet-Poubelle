@@ -4,6 +4,7 @@ import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
 public class MyFirstAppJavaFx extends Application{
     
     @Override
@@ -38,3 +39,4 @@ public class MyFirstAppJavaFx extends Application{
             launch (args);
         }
 }
+
