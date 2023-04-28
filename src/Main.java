@@ -57,6 +57,7 @@ public class Main {
 		System.out.println(contrat.getDatefin().toString());
 		System.out.println(contrat.getProduitConcerné().toString());
 		*/
+		System.out.println("Fin de l'éxécution.");
 	}
 
 	//Fonction qui permet la lecture de fichiers csv/txt avec un délimiteur ","
@@ -76,4 +77,21 @@ public class Main {
 
         return content;
     }
+	// Code pour créer une page de connexion
+	Label nameL = new Label("Nom :");
+	TextField nameF = new TextField();
+
+	Label pwL = new Label("Code d'accès :");
+	TextField pwF = new TextField();
+
+	Button connectB = new Button("Connexion");
+
+	GridPane grid = new GridPane();
+	grid.addRow(0, nameL, nameF);
+	grid.addRow(1, pwL, pwF);
+	grid.add(connectB, 0, 2, 2, 1);
+
+	GridPane.setHalignment(connectB, HPos.CENTER);
+
+	Scene scene = new Scene(grid);
 }
