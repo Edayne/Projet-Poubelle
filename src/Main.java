@@ -3,6 +3,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 
+import javafx.application.Application;
+import javafx.geometry.HPos;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
 
 public class Main {
 
@@ -59,6 +67,7 @@ public class Main {
 		*/
 		System.out.println("Fin de l'éxécution.");
 	}
+	
 
 	//Fonction qui permet la lecture de fichiers csv/txt avec un délimiteur ","
 	public ArrayList<String[]> readData() throws IOException { 
@@ -86,12 +95,22 @@ public class Main {
 
 	Button connectB = new Button("Connexion");
 
-	GridPane grid = new GridPane();
-	grid.addRow(0, nameL, nameF);
-	grid.addRow(1, pwL, pwF);
-	grid.add(connectB, 0, 2, 2, 1);
 
-	GridPane.setHalignment(connectB, HPos.CENTER);
-
-	Scene scene = new Scene(grid);
+	public class GridPaneDemo extends Application {
+	
+		@Override
+		public void start(Stage primaryStage) throws Exception {
+				   
+			   
+			GridPane gridpane = new GridPane();
+			gridpane.addRow(0, nameL, nameF);
+			gridpane.addRow(1, pwL, pwF);
+			gridpane.add(connectB, 0, 2, 2, 1);
+	
+			GridPane.setHalignment(connectB, HPos.CENTER);
+	
+			Scene scene = new Scene(gridpane);
+			   }
+	}
+	
 }
