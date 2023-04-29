@@ -52,40 +52,35 @@ public class FenetreAccueil extends Application {
 		// Button ajoutPts = new Button("Point Gagné"); 
 
 
-		VBox vbox = (VBox) particuliers.getRoot();
-        vbox.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn/*,ajoutPts */);
+		VBox particulierLayout = new VBox(10);
+        particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
+        Particuliers.setRoot(particulierLayout);
 
         consulterHistoriqueBtn.setOnAction(e -> {
-			// Ajouter la méthode pour consulter l'histo
+            // Ajouter la méthode pour consulter l'histo
         });
         convertirPtsBtn.setOnAction(e -> {
-			// Ajouter la méthode pour consulter l'histo
+            // Ajouter la méthode pour consulter l'histo
         });
-		/* ajoutPts.setOnAction(e -> {
-			Ajouter les méthodes pour calculer qteDechet + ajoutPts
-		}) */
 
-		//
-		//
-		// Ajout des boutons du Centre de tri
-		//
-		//
-		Button placerPoubelle = new Button("Placer une poubelle"); 
-		Button collecter = new Button("Collecter");
-		Button realiserStat = new Button("Réaliser");
+        // Ajout des boutons du Centre de tri avec leur action
+        Button placerPoubelle = new Button("Placer une poubelle");
+        Button collecter = new Button("Collecter");
+        Button realiserStat = new Button("Réaliser");
 
-		VBox vbox = (VBox) CentreTri.getRoot();
-        vbox.getChildren().addAll(placerPoubelle, collecter,realiserStat);
+        VBox centreTriLayout = new VBox(10);
+        centreTriLayout.getChildren().addAll(placerPoubelle, collecter, realiserStat);
+        CentreTri.setRoot(centreTriLayout);
 
         placerPoubelle.setOnAction(e -> {
-			// Ajouter la méthode pour placer la poubelle
+            // Ajouter la méthode pour placer la poubelle
         });
         collecter.setOnAction(e -> {
-			// Ajouter la méthode pour collecter
+            // Ajouter la méthode pour collecter
         });
-		realiserStat.setOnAction(e -> {
-			// Ajouter la méthode pour faire stat
-		});
+        realiserStat.setOnAction(e -> {
+            // Ajouter la méthode pour faire stat
+        });
 
 		
 
