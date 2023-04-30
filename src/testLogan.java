@@ -1,79 +1,90 @@
 import javafx.application.Application;
-	import javafx.scene.Scene;
-	import javafx.scene.control.Button;
-	import javafx.scene.control.Label;
-	import javafx.scene.layout.StackPane;
-	import javafx.scene.layout.GridPane;
-	import javafx.geometry.Insets;
-	import javafx.stage.Stage;
+import javafx.scene.*;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.geometry.Pos;
+
+public class testLogan extends Application {
 	
-public class testLogan extends Application{
-	@Override
 	public void start(Stage primaryStage) throws Exception {
-
-
-	    /* donner un nom à la fenêtre */
-	    primaryStage.setTitle("ma Fenêtre");
-
-	    /* Création d'un bouton */
-	    Button b = new Button("mon bouton");
-
-
-	    /* création d'une fenêtre */
-	   /* StackPane root = new StackPane();*/
-	    
-	    /* création d'une grille de 3 x 3 cellules */
-	    GridPane gridPane = new GridPane();
-	    gridPane.setPadding(new Insets(10, 10, 10, 10));
-	    gridPane.setHgap(10);
-	    gridPane.setVgap(10);
-	    
-
-	    /* création de boutons */
-	    Button button1 = new Button("Bouton 1");
-	    Button button2 = new Button("Bouton 2");
-	    Button button3 = new Button("Bouton 3");
-	    Button button4 = new Button("Bouton 4");
-	    Button button5 = new Button("Bouton 5");
-	    Button button6 = new Button("Bouton 6");
-	    Button button7 = new Button("Bouton 7");
-	    Button button8 = new Button("Bouton 8");
-	    Label la = new Label("votre nombre de points:");
-
-	    /* ajout des boutons à la grille */
-	    gridPane.add(button1, 0, 0);
-	    gridPane.add(button2, 1, 0);
-	    gridPane.add(button3, 2, 0);
-	    gridPane.add(button4, 0, 1);
-	    gridPane.add(button5, 1, 1);
-	    gridPane.add(button6, 2, 1);
-	    gridPane.add(button7, 0, 2);
-	    gridPane.add(la, 1, 2);
-	    gridPane.add(button8, 2, 2);
-
-	    /* ajouter le bouton à la scene */
-	    
-	   /* root.getChildren().add(b);	
-	    root.getChildren().add(la);	*/
-	    
-	    
-	    
-
-	    /* création d'une scene et de son association avec */
-	    /* la fenêtre + taille */
-	   /* Scene scene = new Scene(root, 1000, 600); */
-	    Scene scene = new Scene(gridPane, 1000, 600);
-
-	    /* Ajouter la scene */
+		primaryStage.setTitle("ma Fenêtre");
+		
+		Button particuliers = new Button("Particuliers");
+		Button commerce = new Button("Commerce");
+		Button centreTri = new Button("Centre de tri");
+		
+		VBox menuButtons = new VBox(5);
+		
+		StackPane root = new StackPane();
+		
+		root.getChildren().add(menuButtons);
+		menuButtons.getChildren().add(particuliers);
+		menuButtons.getChildren().add(commerce);
+		menuButtons.getChildren().add(centreTri);
+		
+		menuButtons.setAlignment(Pos.CENTER);
+		
+	    Scene scene = new Scene(root, 500, 300);
 	    primaryStage.setScene(scene);
 
-	    /* rendre la fenêtre visible */
-	    primaryStage.show();
-
-	    }
-	    public static void main (String[] args) {
-	        launch (args);
-	    }
+		// Définition des Scenes des diff personne
+		Scene Particuliers = new Scene(new VBox(),500,300);
+		Scene CentreTri = new Scene(new VBox(),500,300);
+		Scene Commerce = new Scene(new VBox(),500,300);
 	    
-	    }
 
+		// Redirection des buttons vers d'autre scene 
+		particuliers.setOnAction(e -> primaryStage.setScene(Particuliers));
+		commerce.setOnAction(e -> primaryStage.setScene(Commerce));
+		centreTri.setOnAction(e -> primaryStage.setScene(CentreTri));
+
+		// 
+		//
+		// Ajout des boutons du Particulier avec leur action (Potentiellement à déplacer dans une autre classe)
+		//
+		//
+		Button consulterHistoriqueBtn = new Button("Consulter Historique");
+        Button convertirPtsBtn = new Button("Convertir Pts");
+		// Button ajoutPts = new Button("Point Gagné"); 
+
+
+        VBox particulierLayout = new VBox(10);
+        particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
+        Particuliers.setRoot(particulierLayout);
+
+        consulterHistoriqueBtn.setOnAction(e -> {
+            // Ajouter la méthode pour consulter l'histo
+        });
+        convertirPtsBtn.setOnAction(e -> {
+            // Ajouter la méthode pour consulter l'histo
+        });
+
+        // Ajout des boutons du Centre de tri avec leur action
+        Button placerPoubelle = new Button("Placer une poubelle");
+        Button collecter = new Button("Collecter");
+        Button realiserStat = new Button("Réaliser");
+
+        VBox centreTriLayout = new VBox(10);
+        centreTriLayout.getChildren().addAll(placerPoubelle, collecter, realiserStat);
+        CentreTri.setRoot(centreTriLayout);
+
+        placerPoubelle.setOnAction(e -> {
+            // Ajouter la méthode pour placer la poubelle
+        });
+        collecter.setOnAction(e -> {
+            // Ajouter la méthode pour collecter
+        });
+        realiserStat.setOnAction(e -> {
+            // Ajouter la méthode pour faire stat
+        });
+		
+
+	    primaryStage.show();
+	}
+	
+	public static void main(String[] args) {
+		launch (args);
+	}
+}
