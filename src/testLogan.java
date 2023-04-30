@@ -49,7 +49,6 @@ public class testLogan extends Application {
 		int nbrP = 500;
 		String nom = "Moulin";
 		Label label = new Label("Bonjour Monsieur "+nom+ ", vous avez " + nbrP + " points");
-		Label nbr = new Label("123");
 		Button consulterHistoriqueBtn = new Button("Consulter Historique");
         Button convertirPtsBtn = new Button("Convertir Pts");
 		// Button ajoutPts = new Button("Point Gagné"); 
@@ -58,14 +57,13 @@ public class testLogan extends Application {
         VBox particulierLayout = new VBox(10);
         particulierLayout.setAlignment(Pos.CENTER);
         particulierLayout.getChildren().add(0,label);
-        particulierLayout.getChildren().add(1,nbr);
         particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
         Particuliers.setRoot(particulierLayout);
 
         consulterHistoriqueBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo
         	Label label2 = new Label("Bonjour");
-        	particulierLayout.getChildren().add(3,label2);
+        	particulierLayout.getChildren().add(2,label2);
         			
         });
         convertirPtsBtn.setOnAction(e -> {
