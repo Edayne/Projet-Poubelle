@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -45,17 +46,24 @@ public class testLogan extends Application {
 		// Ajout des boutons du Particulier avec leur action (Potentiellement à déplacer dans une autre classe)
 		//
 		//
+		Label label = new Label("Bonjour");
+		Label nbr = new Label("123");
 		Button consulterHistoriqueBtn = new Button("Consulter Historique");
         Button convertirPtsBtn = new Button("Convertir Pts");
 		// Button ajoutPts = new Button("Point Gagné"); 
-
+        
 
         VBox particulierLayout = new VBox(10);
+        particulierLayout.getChildren().add(0,label);
+        particulierLayout.getChildren().add(1,nbr);
         particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
         Particuliers.setRoot(particulierLayout);
 
         consulterHistoriqueBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo
+        	Label label2 = new Label("Bonjour");
+        	particulierLayout.getChildren().add(3,label2);
+        			
         });
         convertirPtsBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo
