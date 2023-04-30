@@ -46,7 +46,9 @@ public class testLogan extends Application {
 		// Ajout des boutons du Particulier avec leur action (Potentiellement à déplacer dans une autre classe)
 		//
 		//
-		Label label = new Label("Bonjour");
+		int nbrP = 500;
+		String nom = "Moulin";
+		Label label = new Label("Bonjour Monsieur "+nom+ ", vous avez " + nbrP + " points");
 		Label nbr = new Label("123");
 		Button consulterHistoriqueBtn = new Button("Consulter Historique");
         Button convertirPtsBtn = new Button("Convertir Pts");
@@ -54,6 +56,7 @@ public class testLogan extends Application {
         
 
         VBox particulierLayout = new VBox(10);
+        particulierLayout.setAlignment(Pos.CENTER);
         particulierLayout.getChildren().add(0,label);
         particulierLayout.getChildren().add(1,nbr);
         particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
