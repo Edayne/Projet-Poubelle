@@ -16,10 +16,17 @@ public class testLogan extends Application {
 		Button commerce = new Button("Commerce");
 		Button centreTri = new Button("Centre de tri");
 		
+		//boutons des diff commernces
+		Button Vêtement = new Button("Le Dressing Room");
+		Button Jardiange = new Button("Terre et magma");
+		
+		
+		
 		VBox menuButtons = new VBox(5);
 		
 		StackPane root = new StackPane();
 		
+		//ajout des différents boutons fans le menu principal
 		root.getChildren().add(menuButtons);
 		menuButtons.getChildren().add(particuliers);
 		menuButtons.getChildren().add(commerce);
@@ -34,6 +41,7 @@ public class testLogan extends Application {
 		Scene Particuliers = new Scene(new VBox(),500,300);
 		Scene CentreTri = new Scene(new VBox(),500,300);
 		Scene Commerce = new Scene(new VBox(),500,300);
+		Scene CommerceListe = new Scene(new VBox(),500,300);
 	    
 
 		// Redirection des buttons vers d'autre scene 
@@ -49,17 +57,34 @@ public class testLogan extends Application {
 		int nbrP = 500;
 		String nom = "Moulin";
 		Label label = new Label("Bonjour Monsieur "+nom+ ", vous avez " + nbrP + " points");
+		Label label3 = new Label("Vous avez " + nbrP + " points");
+		Label ListeCommence = new Label("Les différents commerces sont:"); 
+		
+		
+		
+		
+		
 		Button consulterHistoriqueBtn = new Button("Consulter Historique");
         Button convertirPtsBtn = new Button("Convertir Pts");
 		// Button ajoutPts = new Button("Point Gagné"); 
         
 
         VBox particulierLayout = new VBox(10);
-        particulierLayout.setAlignment(Pos.CENTER);
+        particulierLayout.setAlignment(Pos.TOP_CENTER);
         particulierLayout.getChildren().add(0,label);
         particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
         Particuliers.setRoot(particulierLayout);
-
+        
+        //ajout les butons dans liste commence
+        VBox listeCommerceLayout = new VBox(10);
+        listeCommerceLayout.setAlignment(Pos.CENTER);
+        listeCommerceLayout.getChildren().add(0,label3);
+        listeCommerceLayout.getChildren().add(new Label("Les différents commerces sont:"));
+        listeCommerceLayout.getChildren().add(Vêtement);
+        listeCommerceLayout.getChildren().add(Jardiange);
+        CommerceListe.setRoot(listeCommerceLayout);
+        
+        
         consulterHistoriqueBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo
         	Label label2 = new Label("Bonjour");
@@ -68,6 +93,7 @@ public class testLogan extends Application {
         });
         convertirPtsBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo
+        	primaryStage.setScene(CommerceListe);
         });
 
         // Ajout des boutons du Centre de tri avec leur action
