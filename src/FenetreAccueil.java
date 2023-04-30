@@ -75,8 +75,13 @@ public class FenetreAccueil extends Application {
 			dechetAlice.calculerQteDechets(dechetAlice.getQteDechet(), dechetAlice.getTypeDechets());
 			dechetAlice.ajoutPtsGagné(alice,dechetAlice.getPtsgagne());
 			int i=alice.getPtsFidelite();
-			System.out.println("Nombre de points de fidélité avant ajout : " + j + "\n" +
+
+			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    		alert.setTitle("Message");
+    		alert.setHeaderText(null);
+			alert.setContentText("Nombre de points de fidélité avant ajout : " + j + "\n" +
 			"Nombre de points de fidélité après ajout : " + i);
+			alert.showAndWait();
 		});
 
 
