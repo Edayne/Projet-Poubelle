@@ -54,7 +54,7 @@ public class FenetreAccueil extends Application {
 
 
 		VBox particulierLayout = new VBox(10);
-        particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
+        particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn, deposerDechet);
         Particuliers.setRoot(particulierLayout);
 
         consulterHistoriqueBtn.setOnAction(e -> {
@@ -63,6 +63,23 @@ public class FenetreAccueil extends Application {
         convertirPtsBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo
         });
+		deposerDechet.setOnAction(e -> {
+			// Méthode de déposer Déchets
+			DeposerDechet dechetAlice = new DeposerDechet();
+			dechetAlice.setDate(new Date());
+			dechetAlice.setQteDechet(10);
+			dechetAlice.setTypeDechets(TypeDechets.VERRE);
+			dechetAlice.setUtilisateur(alice);
+			dechetAlice.setPtsgagne(0);
+			int j=alice.getPtsFidelite();
+			dechetAlice.calculerQteDechets(dechetAlice.getQteDechet(), dechetAlice.getTypeDechets());
+			dechetAlice.ajoutPtsGagné(alice,dechetAlice.getPtsgagne());
+			int i=alice.getPtsFidelite();
+			System.out.println("Nombre de points de fidélité avant ajout : " + j + "\n" +
+			"Nombre de points de fidélité après ajout : " + i);
+		});
+
+
 
         // Ajout des boutons du Centre de tri avec leur action
         Button placerPoubelle = new Button("Placer une poubelle");
