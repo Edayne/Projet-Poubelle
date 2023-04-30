@@ -3,6 +3,7 @@ import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.*;
 
 public class MyFirstAppJavaFx extends Application{
     

@@ -7,24 +7,25 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.geometry.Pos;
+import javafx.stage.*;
 
 public class FenetreAccueil extends Application {
 	
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("ma Fenêtre");
 		
-		Button particuliers = new Button("Particuliers");
-		Button commerce = new Button("Commerce");
-		Button centreTri = new Button("Centre de tri");
+		Button particuliersBouton = new Button("Particuliers");
+		Button commerceBouton = new Button("Commerce");
+		Button centreTriBouton = new Button("Centre de tri");
 		
 		VBox menuButtons = new VBox(5);
 		
 		StackPane root = new StackPane();
 		
 		root.getChildren().add(menuButtons);
-		menuButtons.getChildren().add(particuliers);
-		menuButtons.getChildren().add(commerce);
-		menuButtons.getChildren().add(centreTri);
+		menuButtons.getChildren().add(particuliersBouton);
+		menuButtons.getChildren().add(commerceBouton);
+		menuButtons.getChildren().add(centreTriBouton);
 		
 		menuButtons.setAlignment(Pos.CENTER);
 		
@@ -32,15 +33,15 @@ public class FenetreAccueil extends Application {
 	    primaryStage.setScene(scene);
 
 		// Définition des Scenes des diff personne
-		Scene Particuliers = new Scene(new VBox(),500,300);
-		Scene CentreTri = new Scene(new VBox(),500,300);
-		Scene Commerce = new Scene(new VBox(),500,300);
+		Scene particuliersScene = new Scene(new VBox(),500,300);
+		Scene centreTriScene = new Scene(new VBox(),500,300);
+		Scene commerceScene = new Scene(new VBox(),500,300);
 	    
 
 		// Redirection des buttons vers d'autre scene 
-		particuliers.setOnAction(e -> primaryStage.setScene(Particuliers));
-		commerce.setOnAction(e -> primaryStage.setScene(Commerce));
-		centreTri.setOnAction(e -> primaryStage.setScene(CentreTri));
+		particuliersBouton.setOnAction(e -> primaryStage.setScene(particuliersScene));
+		commerceBouton.setOnAction(e -> primaryStage.setScene(commerceScene));
+		centreTriBouton.setOnAction(e -> primaryStage.setScene(centreTriScene));
 
 		// 
 		//
