@@ -117,6 +117,39 @@ public class FenetreAccueil extends Application {
 
 		renouveler.setOnAction(e -> {
 			// Méthode renouveler
+			Contrat contrat = new Contrat();
+			contrat.setDatedeb(new Date());
+			Date date = new Date();
+			// Permet de fixer la date de fin à dans un an
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(date);
+			calendar.add(Calendar.YEAR, 1);
+			Date datefin = calendar.getTime();
+			contrat.setDatefin(datefin);
+			contrat.setProduitConcerné(Produit.Offre);
+			
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setHeaderText(null);
+			alert.setContentText(datefin.toString());
+			alert.showAndWait();
+
+			Alert alert2 = new Alert(AlertType.INFORMATION);
+			alert2.setHeaderText(null);
+			alert2.setContentText(contrat.getProduitConcerné().toString());
+			alert2.showAndWait();
+			// Renouveler augmente de 1 an la date de fin du contrat 
+			// Renouveler permet de modifier la valeur d'une reduction
+			contrat.renouveler(datefin);
+
+			Alert alert3 = new Alert(AlertType.INFORMATION);
+			alert3.setHeaderText(null);
+			alert3.setContentText(contrat.getDatefin().toString());
+			alert3.showAndWait();
+
+			Alert alert4 = new Alert(AlertType.INFORMATION);
+			alert4.setHeaderText(null);
+			alert4.setContentText(contrat.getProduitConcerné().toString());
+			alert4.showAndWait();
 		});
 
 	    primaryStage.show();
