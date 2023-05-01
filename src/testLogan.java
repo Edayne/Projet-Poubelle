@@ -51,10 +51,9 @@ public class testLogan extends Application {
 		centreTri.setOnAction(e -> primaryStage.setScene(CentreTri));
 
 		// 
-		//
 		// Ajout des boutons du Particulier avec leur action (Potentiellement à déplacer dans une autre classe)
 		//
-		//
+	
 		int nbrP = 500;
 		String nom = "Moulin";
 		Label label = new Label("Bonjour Monsieur "+nom+ ", vous avez " + nbrP + " points");

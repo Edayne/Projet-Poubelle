@@ -24,7 +24,7 @@ public class FenetreParticulier extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception{
-		primaryStage.setTitle("ma Fenêtre");		
+		primaryStage.setTitle("Gestion des utlisateurs");		
 		StackPane root = new StackPane();
 		
 		HBox fenetre = new HBox(25);
@@ -55,7 +55,6 @@ public class FenetreParticulier extends Application {
 		listeUtilBouton.setAlignment(Pos.CENTER);
 		
 		
-
 		Text t = new Text(10, 50, "Entrez votre code d'accès");
 		TextField motDePasse = new TextField();
 		zoneInfos.getChildren().add(t);
@@ -161,6 +160,7 @@ public class FenetreParticulier extends Application {
             primaryStage.setScene(nouveauUserScene);
         });
 	}
+	
 	
 	public static void main(String[] args) {
 		Application.launch (args);
