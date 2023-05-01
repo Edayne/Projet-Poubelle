@@ -59,7 +59,7 @@ public class testLogan extends Application {
 		String nom = "Moulin";
 		Label label = new Label("Bonjour Monsieur "+nom+ ", vous avez " + nbrP + " points");
 		Label label3 = new Label("Vous avez " + nbrP + " points");
-		Label ListeCommence = new Label("Les différents commerces sont:"); 
+		//Label ListeCommence = new Label("Les différents commerces sont:"); 
 		
 		
 		

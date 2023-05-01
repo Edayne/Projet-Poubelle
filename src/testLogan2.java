@@ -7,12 +7,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.geometry.Pos;
+import javafx.stage.*;
 
 public class testLogan2 extends Application {
 	
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("ma Fenêtre");
-		
 		Button particuliers = new Button("Particuliers");
 		Button commerce = new Button("Commerce");
 		Button centreTri = new Button("Centre de tri");
