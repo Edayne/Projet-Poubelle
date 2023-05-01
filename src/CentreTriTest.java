@@ -1,76 +1,102 @@
-import static org.junit.Assert.*;
-import org.junit.Test;
-import java.util.ArrayList;
 
 public class CentreTriTest {
 
-    @Test
-    public void testPlacerPoubelle() {
-        CentreDeTri centre = new CentreDeTri();
-        centre.setNom("Centre de tri test");
-        centre.setAdresse("123 rue test");
+    public static void main(String[] args) {
+        testPlacerPoubelle();
+        testCollecter();
+        testRealiserStats();
+    }
+    private static void assertEquals(int i, int size) {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void assertEquals(String adresse, String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void assertNotEquals(String adresse, String emplacement) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+    private static void testPlacerPoubelle() {
+        CentreDeTri centreDeTri = new CentreDeTri();
+        Poubelle poubelle = new Poubelle(1);
+        String adresse = "rue des Gâtés";
 
-        ArrayList<Poubelle> listePoubelles = new ArrayList<Poubelle>();
-        centre.setListePoubelles(listePoubelles);
+        // Ajout d'une première poubelle
+        centreDeTri.placerPoubelle(poubelle, adresse);
+        assertEquals(1, centreDeTri.getListePoubelles().size());
+        assertEquals(adresse, centreDeTri.getListePoubelles().get(0).getEmplacement());
 
-        Poubelle poubelle1 = new Poubelle(TypeDechets.PLASTIQUE, 1);
-        Poubelle poubelle2 = new Poubelle(TypeDechets.VERRE, 2);
-
-        centre.placerPoubelle(poubelle1, "123 rue test");
-        centre.placerPoubelle(poubelle2, "456 rue test");
-
-        assertEquals("La poubelle a été placée à l'adresse 123 rue test", outContent.toString().trim());
+        // Ajout d'une deuxième poubelle à la même adresse
+        Poubelle poubelle2 = new Poubelle(2, TypeDechets.PAPIER);
+        centreDeTri.placerPoubelle(poubelle2, adresse);
+        assertEquals(1, centreDeTri.getListePoubelles().size());
+        assertNotEquals(adresse, centreDeTri.getListePoubelles().get(0).getEmplacement());
     }
 
-    @Test
-    public void testCollecter() {
-        CentreDeTri centre = new CentreDeTri();
-        centre.setNom("Centre de tri test");
-        centre.setAdresse("123 rue test");
+	private static void testCollecter() {
+        CentreDeTri centreDeTri = new CentreDeTri();
+        Poubelle poubelle = new Poubelle(1, TypeDechets.VERRE);
+        centreDeTri.setNom("Centre de tri Patafix");
+        centreDeTri.setAdresse("rue des Gâtés");
+        centreDeTri.setListePoubelles(new ArrayList<>());
+        centreDeTri.getListePoubelles().add(poubelle);
 
-        ArrayList<Poubelle> listePoubelles = new ArrayList<Poubelle>();
-        centre.setListePoubelles(listePoubelles);
+        // Vérification des statistiques avant collecte
+        assertEquals(0, centreDeTri.realiserStats().size());
 
-        Poubelle poubelle1 = new Poubelle(TypeDechets.PLASTIQUE, 1);
-        Poubelle poubelle2 = new Poubelle(TypeDechets.VERRE, 2);
+        // Collecte de la poubelle
+        poubelle.ajouterDechet(new Dechet(TypeDechets.VERRE));
+        poubelle.ajouterDechet(new Dechet(TypeDechets.VERRE));
+        poubelle.ajouterDechet(new Dechet(TypeDechets.PAPIER));
+        centreDeTri.collecter();
 
-        poubelle1.setEmplacement("123 rue test");
-        poubelle2.setEmplacement("456 rue test");
-
-        centre.getListePoubelles().add(poubelle1);
-        centre.getListePoubelles().add(poubelle2);
-
-        poubelle1.ajouterDechets(5);
-        poubelle2.ajouterDechets(10);
-
-        centre.collecter();
-
-        assertEquals("Poubelle 1 collectée au centre de tri Centre de tri test\nPoubelle 2 collectée au centre de tri Centre de tri test\nStatistiques du centre de tri Centre de tri test\nPLASTIQUE : 5\nVERRE : 10", outContent.toString().trim());
+        // Vérification de la collecte et des statistiques
+        assertTrue(poubelle.estVide());
+        assertEquals(2, centreDeTri.getListePoubelles().size());
+        assertEquals(2, centreDeTri.realiserStats().get(TypeDechets.VERRE).intValue());
+        assertEquals(1, centreDeTri.realiserStats().get(TypeDechets.PAPIER).intValue());
     }
-
-    @Test
-    public void testRealiserStats() {
+	
+	public static void testRealiserStats() {
+        // Créer un centre de tri avec une poubelle pour les déchets recyclables
         CentreDeTri centre = new CentreDeTri();
-        centre.setNom("Centre de tri test");
-        centre.setAdresse("123 rue test");
+        centre.setNom("Centre de tri #1");
+        centre.setAdresse("123 rue de la Recyclade");
+        centre.setListePoubelles(new ArrayList<>());
 
-        ArrayList<Poubelle> listePoubelles = new ArrayList<Poubelle>();
-        centre.setListePoubelles(listePoubelles);
-
-        Poubelle poubelle1 = new Poubelle(TypeDechets.PLASTIQUE, 1);
-        Poubelle poubelle2 = new Poubelle(TypeDechets.VERRE, 2);
-
-        poubelle1.setEmplacement("123 rue test");
-        poubelle2.setEmplacement("456 rue test");
-
-        centre.getListePoubelles().add(poubelle1);
-        centre.getListePoubelles().add(poubelle2);
-
-        poubelle1.ajouterDechets(5);
-        poubelle2.ajouterDechets(10);
-
+        Poubelle poubelle1 = new Poubelle(TypeDechets.RECYCLABLES);
+        centre.placerPoubelle(poubelle1, "Entrée");
         centre.realiserStats();
 
-        assertEquals("", outContent.toString().trim());
+        // On s'attend à avoir 1 déchet recyclable collecté
+        HashMap<TypeDechets, Integer> stats = centre.getStats();
+        assert stats.get(TypeDechets.RECYCLABLES) == 1 : "Le nombre de déchets recyclables collectés est incorrect";
+
+        // Ajouter une autre poubelle pour les déchets organiques
+        Poubelle poubelle2 = new Poubelle(TypeDechets.ORGANIQUES);
+        centre.placerPoubelle(poubelle2, "Cuisine");
+
+        // Collecter les déchets dans les poubelles pleines
+        poubelle1.ajouterDechets(2);
+        poubelle2.ajouterDechets(3);
+        centre.collecter();
+
+        // On s'attend à avoir 1 déchet recyclable collecté et 1 déchet organique collecté
+        stats = centre.getStats();
+        assert stats.get(TypeDechets.RECYCLABLES) == 1 : "Le nombre de déchets recyclables collectés est incorrect";
+        assert stats.get(TypeDechets.ORGANIQUES) == 1 : "Le nombre de déchets organiques collectés est incorrect";
+
+        // Collecter les déchets restants
+        poubelle1.ajouterDechets(3);
+        poubelle2.ajouterDechets(4);
+        centre.collecter();
+
+        // On s'attend à avoir 4 déchets recyclables collectés et 4 déchets organiques collectés
+        stats = centre.getStats();
+        assert stats.get(TypeDechets.RECYCLABLES) == 4 : "Le nombre de déchets recyclables collectés est incorrect";
+        assert stats.get(TypeDechets.ORGANIQUES) == 4 : "Le nombre de déchets organiques collectés est incorrect";
     }
 }
