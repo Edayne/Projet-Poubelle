@@ -108,7 +108,16 @@ public class FenetreAccueil extends Application {
             // Ajouter la méthode pour faire stat
         });
 
-		
+		// Ajout du bouton pour le commerce
+		Button renouveler = new Button("Renouveler le contrat");
+
+		VBox commerceLayout = new VBox(10);
+        commerceLayout.getChildren().addAll(renouveler);
+        commerceScene.setRoot(centreTriLayout);
+
+		renouveler.setOnAction(e -> {
+			// Méthode renouveler
+		});
 
 	    primaryStage.show();
 	}
