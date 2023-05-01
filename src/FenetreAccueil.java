@@ -109,7 +109,7 @@ public class FenetreAccueil extends Application {
         });
 
 		// Ajout du bouton pour le commerce
-		Button renouveler = new Button("Renouveler le contrat");
+		Button renouveler = new Button("Renouveler le contrat d'un an");
 
 		VBox commerceLayout = new VBox(10);
         commerceLayout.getChildren().addAll(renouveler);
@@ -127,7 +127,7 @@ public class FenetreAccueil extends Application {
 			Date datefin = calendar.getTime();
 			contrat.setDatefin(datefin);
 			contrat.setProduitConcerné(Produit.Offre);
-			
+
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setHeaderText(null);
 			alert.setContentText(datefin.toString());
