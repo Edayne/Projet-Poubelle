@@ -34,6 +34,8 @@ public class FenetreParticulier extends Application {
 		Utilisateur bob = new Utilisateur(02, "Bob");
 		alice.setCodeAcces(1234);
 		bob.setCodeAcces(5678);
+		alice.setPtsFidelite(50);
+		bob.setPtsFidelite(0);
 		
 		ObservableList<String> names = FXCollections.observableArrayList(
 				alice.getNom(), bob.getNom());

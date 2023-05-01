@@ -7,25 +7,24 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.geometry.Pos;
-import javafx.stage.*;
 
-public class FenetreAccueil extends Application {
+public class testLogan2 extends Application {
 	
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("ma Fenêtre");
 		
-		Button particuliersBouton = new Button("Particuliers");
-		Button commerceBouton = new Button("Commerce");
-		Button centreTriBouton = new Button("Centre de tri");
+		Button particuliers = new Button("Particuliers");
+		Button commerce = new Button("Commerce");
+		Button centreTri = new Button("Centre de tri");
 		
 		VBox menuButtons = new VBox(5);
 		
 		StackPane root = new StackPane();
 		
 		root.getChildren().add(menuButtons);
-		menuButtons.getChildren().add(particuliersBouton);
-		menuButtons.getChildren().add(commerceBouton);
-		menuButtons.getChildren().add(centreTriBouton);
+		menuButtons.getChildren().add(particuliers);
+		menuButtons.getChildren().add(commerce);
+		menuButtons.getChildren().add(centreTri);
 		
 		menuButtons.setAlignment(Pos.CENTER);
 		
@@ -33,15 +32,15 @@ public class FenetreAccueil extends Application {
 	    primaryStage.setScene(scene);
 
 		// Définition des Scenes des diff personne
-		Scene particuliersScene = new Scene(new VBox(),500,300);
-		Scene centreTriScene = new Scene(new VBox(),500,300);
-		Scene commerceScene = new Scene(new VBox(),500,300);
+		Scene Particuliers = new Scene(new VBox(),500,300);
+		Scene CentreTri = new Scene(new VBox(),500,300);
+		Scene Commerce = new Scene(new VBox(),500,300);
 	    
 
 		// Redirection des buttons vers d'autre scene 
-		particuliersBouton.setOnAction(e -> primaryStage.setScene(particuliersScene));
-		commerceBouton.setOnAction(e -> primaryStage.setScene(commerceScene));
-		centreTriBouton.setOnAction(e -> primaryStage.setScene(centreTriScene));
+		particuliers.setOnAction(e -> primaryStage.setScene(Particuliers));
+		commerce.setOnAction(e -> primaryStage.setScene(Commerce));
+		centreTri.setOnAction(e -> primaryStage.setScene(CentreTri));
 
 		// 
 		//
@@ -54,7 +53,7 @@ public class FenetreAccueil extends Application {
 
 
 		VBox particulierLayout = new VBox(10);
-        particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn, deposerDechet);
+        particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
         Particuliers.setRoot(particulierLayout);
 
         consulterHistoriqueBtn.setOnAction(e -> {
@@ -63,28 +62,6 @@ public class FenetreAccueil extends Application {
         convertirPtsBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo
         });
-		deposerDechet.setOnAction(e -> {
-			// Méthode de déposer Déchets
-			DeposerDechet dechetAlice = new DeposerDechet();
-			dechetAlice.setDate(new Date());
-			dechetAlice.setQteDechet(10);
-			dechetAlice.setTypeDechets(TypeDechets.VERRE);
-			dechetAlice.setUtilisateur(alice);
-			dechetAlice.setPtsgagne(0);
-			int j=alice.getPtsFidelite();
-			dechetAlice.calculerQteDechets(dechetAlice.getQteDechet(), dechetAlice.getTypeDechets());
-			dechetAlice.ajoutPtsGagné(alice,dechetAlice.getPtsgagne());
-			int i=alice.getPtsFidelite();
-
-			Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    		alert.setTitle("Message");
-    		alert.setHeaderText(null);
-			alert.setContentText("Nombre de points de fidélité avant ajout : " + j + "\n" +
-			"Nombre de points de fidélité après ajout : " + i);
-			alert.showAndWait();
-		});
-
-
 
         // Ajout des boutons du Centre de tri avec leur action
         Button placerPoubelle = new Button("Placer une poubelle");
