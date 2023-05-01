@@ -1,5 +1,7 @@
 
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -61,11 +63,40 @@ public class FenetreAccueil extends Application {
         particuliersScene.setRoot(particulierLayout);
 
         consulterHistoriqueBtn.setOnAction(e -> {
-            // Ajouter la méthode pour consulter l'histo
-        });
+        	Utilisateur utilisateur = new Utilisateur(1, "Didier");
+            utilisateur.setPtsFidelite(200);
+            Poubelle poubelle = new Poubelle(1,TypeDechets.VERRE);
+            utilisateur.setPoubelle(poubelle);
+            DeposerDechet deposerDechet = new DeposerDechet(1, "Bouteille", 1.5);
+            ArrayList<DeposerDechet> listeDeposerDechets = new ArrayList<>();
+            listeDeposerDechets.add(deposerDechet);
+            utilisateur.setListeDeposerDechets(listeDeposerDechets);
+
+            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(outContent));
+
+            utilisateur.consulterHistorique();
+
+            String expectedOutput = "Historique de l'utilisateur :\n" +
+                "\n" +
+                "Nom : Didier\n" +
+                "idUser : 1\n" +
+                "Code Acces : 0\n" +
+                "Pts Fidelite : 200\n" +
+                "Poubelle : " + poubelle + "\n" +
+                "\n" +
+                "Déchets déposés :\n" +
+                "DéposerDechet{idDeposerDechet=1, nom='Bouteille', poids=1.5}\n";
+            assertEquals(expectedOutput, outContent.toString());        
+            });
+        
         convertirPtsBtn.setOnAction(e -> {
-            // Ajouter la méthode pour consulter l'histo
-        });
+            Utilisateur utilisateur = new Utilisateur(1, "Bigard");
+            utilisateur.setPtsFidelite(200);
+            utilisateur.convertirPtsFidelite(utilisateur);
+            assertEquals(2, utilisateur.getPtsFidelite()); 
+            });
+        
 		deposerDechetsBtn.setOnAction(e -> {
 			// Méthode de déposer Déchets
 			DeposerDechet dechetAlice = new DeposerDechet();

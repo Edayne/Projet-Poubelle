@@ -20,7 +20,10 @@ public class Poubelle {
 		// TODO Auto-generated method stub
 
     }
-    //Teste si l'utilisateur qui tente de mettre un déchet est propriétaire
+    public Poubelle(int i, TypeDechets verre) {
+		// TODO Auto-generated constructor stub
+	}
+	//Teste si l'utilisateur qui tente de mettre un déchet est propriétaire
     public boolean checkUser(Utilisateur utilisateur) {
         int idTeste = utilisateur.getIdUser();
 

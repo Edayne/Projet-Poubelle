@@ -9,7 +9,11 @@ public class DeposerDechet {
 
 
 
-    public Date getDate() {
+    public DeposerDechet(int i, String string, double d) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Date getDate() {
         return date;
     }
 
