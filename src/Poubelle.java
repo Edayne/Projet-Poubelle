@@ -13,7 +13,9 @@ public abstract class Poubelle {
     public void addUser(Utilisateur user) {
         this.listeUser.add(user);
     }
-
+    public Poubelle(int id) {
+    	this.idPoubelle = id;
+    }
     //Teste si l'utilisateur qui tente de mettre un déchet est propriétaire
     public boolean checkUser(Utilisateur utilisateur) {
         int idTeste = utilisateur.getIdUser();

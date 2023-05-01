@@ -44,10 +44,8 @@ public class FenetreAccueil extends Application {
 		// Redirection des buttons vers d'autre scene 
 		particuliersBouton.setOnAction(e -> primaryStage.setScene(particuliersScene));
 		commerceBouton.setOnAction(e -> primaryStage.setScene(commerceScene));
-		centreTriBouton.setOnAction(e -> primaryStage.setScene(centreTriScene));
-
-		// 
-		//
+		centreTriBouton.setOnAction(e -> primaryStage.setScene(centreTriScene));		 
+		
 		// Ajout des boutons du Particulier avec leur action (Potentiellement à déplacer dans une autre classe)
 		//
 		//
@@ -59,7 +57,7 @@ public class FenetreAccueil extends Application {
 
 		VBox particulierLayout = new VBox(10);
         particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn, deposerDechetsBtn);
-        Particuliers.setRoot(particulierLayout);
+        particuliersScene.setRoot(particulierLayout);
 
         consulterHistoriqueBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo

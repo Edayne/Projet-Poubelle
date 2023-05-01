@@ -37,9 +37,9 @@ public class FenetreParticulier extends Application {
 		alice.setPtsFidelite(50);
 		bob.setPtsFidelite(0);
 		
-		ObservableList<String> names = FXCollections.observableArrayList(
-				alice.getNom(), bob.getNom());
-		ListView<String> listView = new ListView<String>(names);
+		ObservableList<Utilisateur> names = FXCollections.observableArrayList(
+				alice, bob);
+		ListView<Utilisateur> listView = new ListView<Utilisateur>(names);
 		Button ajouter = new Button("Nouveau");
 		Button choisir = new Button("Choisir");
 		HBox listeUtilBouton = new HBox(10);

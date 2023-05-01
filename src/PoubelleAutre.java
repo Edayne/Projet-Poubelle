@@ -1,5 +1,9 @@
 public class PoubelleAutre extends Poubelle{
-    private int poidsIndiv; //correspond au poids d'un seul déchet de ce type
+	
+    public PoubelleAutre(int id) {
+		super(id);
+    }
+	private int poidsIndiv; //correspond au poids d'un seul déchet de ce type
 
     public int calculerPoids() {
         int poids = getQuantiteAct()*this.getPoids();
