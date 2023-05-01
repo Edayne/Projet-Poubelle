@@ -84,15 +84,14 @@ public class CreerUtilisateur extends Application {
     }
     
     public void show() {
-    	StackPane root = new StackPane();
         // Création d'une nouvelle fenêtre Stage
         Stage stage = new Stage();
 
         // Création de la scène
-        Scene scene = new Scene(root, 400, 400);
+        Scene nouveauUserScene = new Scene(new StackPane(), 400, 400);
 
         // Affichage de la scène dans la fenêtre
-        stage.setScene(scene);
+        stage.setScene(nouveauUserScene);
         stage.show();
     }
 
