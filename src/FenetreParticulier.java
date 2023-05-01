@@ -80,7 +80,6 @@ public class FenetreParticulier extends Application {
 		
 	    Scene scene = new Scene(root, 500, 300);
 	    primaryStage.setScene(scene);
-	    
 	    primaryStage.show();
 	}
 	

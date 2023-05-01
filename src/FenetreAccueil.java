@@ -1,13 +1,16 @@
 
 
+import java.util.Date;
+
 import javafx.application.Application;
 import javafx.scene.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.geometry.Pos;
-import javafx.stage.*;
+import javafx.stage.Stage;
 
 public class FenetreAccueil extends Application {
 	
@@ -50,11 +53,12 @@ public class FenetreAccueil extends Application {
 		//
 		Button consulterHistoriqueBtn = new Button("Consulter Historique");
         Button convertirPtsBtn = new Button("Convertir Pts");
+        Button deposerDechetsBtn = new Button("Déposer");
 		// Button ajoutPts = new Button("Point Gagné"); 
 
 
 		VBox particulierLayout = new VBox(10);
-        particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn, deposerDechet);
+        particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn, deposerDechetsBtn);
         Particuliers.setRoot(particulierLayout);
 
         consulterHistoriqueBtn.setOnAction(e -> {
@@ -63,18 +67,19 @@ public class FenetreAccueil extends Application {
         convertirPtsBtn.setOnAction(e -> {
             // Ajouter la méthode pour consulter l'histo
         });
-		deposerDechet.setOnAction(e -> {
+		deposerDechetsBtn.setOnAction(e -> {
 			// Méthode de déposer Déchets
 			DeposerDechet dechetAlice = new DeposerDechet();
 			dechetAlice.setDate(new Date());
 			dechetAlice.setQteDechet(10);
 			dechetAlice.setTypeDechets(TypeDechets.VERRE);
+			Utilisateur alice = new Utilisateur(01, "alice");
 			dechetAlice.setUtilisateur(alice);
 			dechetAlice.setPtsgagne(0);
-			int j=alice.getPtsFidelite();
+			int j = alice.getPtsFidelite();
 			dechetAlice.calculerQteDechets(dechetAlice.getQteDechet(), dechetAlice.getTypeDechets());
 			dechetAlice.ajoutPtsGagné(alice,dechetAlice.getPtsgagne());
-			int i=alice.getPtsFidelite();
+			int i = alice.getPtsFidelite();
 
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
     		alert.setTitle("Message");
@@ -93,7 +98,7 @@ public class FenetreAccueil extends Application {
 
         VBox centreTriLayout = new VBox(10);
         centreTriLayout.getChildren().addAll(placerPoubelle, collecter, realiserStat);
-        CentreTri.setRoot(centreTriLayout);
+        centreTriScene.setRoot(centreTriLayout);
 
         placerPoubelle.setOnAction(e -> {
             // Ajouter la méthode pour placer la poubelle
