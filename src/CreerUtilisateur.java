@@ -1,8 +1,10 @@
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -42,6 +44,7 @@ public class CreerUtilisateur extends Application {
 
         // Création du bouton de validation
         Button validerButton = new Button("Valider");
+        form.setAlignment(Pos.CENTER);
         validerButton.setOnAction(event -> {
         	
             // Récupération des valeurs saisies
@@ -75,11 +78,27 @@ public class CreerUtilisateur extends Application {
 
         // Affichage de la fenêtre
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Nouvel Utilisateur");
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
+    
+    public void show() {
+    	StackPane root = new StackPane();
+        // Création d'une nouvelle fenêtre Stage
+        Stage stage = new Stage();
+
+        // Création de la scène
+        Scene scene = new Scene(root, 400, 400);
+
+        // Affichage de la scène dans la fenêtre
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     public static void main(String[] args) {
-        Application.launch(args);
+        launch(args);
     }
 
 }

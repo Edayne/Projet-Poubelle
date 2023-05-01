@@ -61,6 +61,13 @@ public class FenetreParticulier extends Application {
 			}
 		};
 		
+		ajouter.setOnAction(e -> {        	
+            // Création de la fenêtre pour créer un utilisateur
+            CreerUtilisateur creerUtilisateur = new CreerUtilisateur();
+
+            // Affichage de la fenêtre
+            creerUtilisateur.show();
+        });
 		choisir.setOnAction(e -> System.out.println("Bouton CHOISIR appuyé"));
 
 		Text t = new Text(10, 50, "Entrez votre code d'accès");
@@ -69,11 +76,11 @@ public class FenetreParticulier extends Application {
 		zoneInfos.getChildren().add(motDePasse);
 		
 		//Récupère l'élément actuellement sélectionné
-		String currentElm = listView.getSelectionModel().getSelectedItem();
+		Utilisateur currentElm = listView.getSelectionModel().getSelectedItem();
 		
-		Text infos = new Text(10, 50, "Nom :\t" + currentElm
-		+ "\nPoints de fidélité :\t215"
-		+ "\nPoubelles :\t01"
+		Text infos = new Text(10, 50, "Nom :\t" + "Alice"
+				+ "\nPoints de fidélité :\t" + "215"
+				+ "\nPoubelles :\t" + "01"
 		);
 		zoneInfos.getChildren().add(infos);
 		
