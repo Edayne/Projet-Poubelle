@@ -87,4 +87,9 @@ public class CentreDeTri {
     public ArrayList<Poubelle> getListePoubelles() {
         return listePoubelles;
     }
+
+	public HashMap<TypeDechets, Integer> getStats() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

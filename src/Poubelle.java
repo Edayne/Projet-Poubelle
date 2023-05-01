@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Poubelle {
+public class Poubelle {
     private int idPoubelle;
     private String emplacement;
     private int capaciteMax;
@@ -13,8 +13,17 @@ public abstract class Poubelle {
     public void addUser(Utilisateur user) {
         this.listeUser.add(user);
     }
+    public Poubelle(int id) {
+    	this.idPoubelle = id;
+    }
+    public Poubelle(TypeDechets VERRE) {
+		// TODO Auto-generated method stub
 
-    //Teste si l'utilisateur qui tente de mettre un déchet est propriétaire
+    }
+    public Poubelle(int i, TypeDechets verre) {
+		// TODO Auto-generated constructor stub
+	}
+	//Teste si l'utilisateur qui tente de mettre un déchet est propriétaire
     public boolean checkUser(Utilisateur utilisateur) {
         int idTeste = utilisateur.getIdUser();
 
@@ -48,6 +57,9 @@ public abstract class Poubelle {
     
     public void vider() {
         this.quantiteAct = 0;
+    }
+    public boolean estVide() {
+    	return quantiteAct==0;
     }
 
     //Getters et setters
@@ -106,6 +118,10 @@ public abstract class Poubelle {
     public void setCentreDeTri(CentreDeTri centreDeTri) {
         this.centreDeTri = centreDeTri;
     }
+	public void ajouterDechets(int i) {
+		// TODO Auto-generated method stub
+		
+	}
 
     
 }

@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.event.ActionEvent;
 import javafx.geometry.HPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -31,11 +33,59 @@ import javafx.stage.Stage;
 			Scene scene = new Scene(gridpane);
 			primaryStage.setScene(scene);
 			primaryStage.show();
-			   }
+			
 		
-	  public static void main (String[] args) {
-	        launch (args);
-	  }      
-	}
+
+	        // Clear
+	        Button buttonClear = new Button("Clear");
+	        buttonClear.setOnAction(new EventHandler<ActionEvent>() {
+	
+	            @Override
+	            public void handle(ActionEvent event) {
+	                nameF.clear();
+	            }
+	        });
+	
+	        // Copy
+	        Button buttonCopy = new Button("Copy");
+	
+	        buttonCopy.setFocusTraversable(false);
+	
+	        buttonCopy.setOnAction(new EventHandler<ActionEvent>() {
+	
+	            @Override
+	            public void handle(ActionEvent event) {
+	                nameF.copy();
+	            }
+	        });
+	
+	        // Cut
+	        Button buttonCut = new Button("Cut");
+	
+	        buttonCut.setFocusTraversable(false);
+	
+	        buttonCut.setOnAction(new EventHandler<ActionEvent>() {
+	
+	            @Override
+	            public void handle(ActionEvent event) {
+	                nameF.cut();
+	            }
+	        });
+	
+	        // Paste
+	        Button buttonPaste = new Button("Paste");
+	        buttonPaste.setFocusTraversable(false);
+	        buttonPaste.setOnAction(new EventHandler<ActionEvent>() {
+	
+	            @Override
+	            public void handle(ActionEvent event) {
+	                nameF.paste();
+	            }
+	        });
+		}
+		  public static void main (String[] args) {
+		        launch (args);
+		  }      
+		}
 
 
