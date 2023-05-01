@@ -1,10 +1,14 @@
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -15,7 +19,7 @@ import javafx.stage.Stage;
 public class FenetreParticulier extends Application {
 
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage primaryStage) throws Exception{
 		primaryStage.setTitle("ma Fenêtre");		
 		StackPane root = new StackPane();
 		
@@ -35,13 +39,41 @@ public class FenetreParticulier extends Application {
 				alice.getNom(), bob.getNom());
 		ListView<String> listView = new ListView<String>(names);
 		Button ajouter = new Button("Nouveau");
+		Button choisir = new Button("Choisir");
+		HBox listeUtilBouton = new HBox(10);
 		listeUtil.getChildren().add(listView);
-		listeUtil.getChildren().add(ajouter);
+		listeUtil.getChildren().add(listeUtilBouton);
+		listeUtilBouton.getChildren().add(ajouter);
+		listeUtilBouton.getChildren().add(choisir);
 		
+		listeUtilBouton.setAlignment(Pos.CENTER);
+		
+		//Classe invisible qui gère les clics sur boutons
+		EventHandler<ActionEvent> handler = new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				// on a cliqué sur le bouton
+				System.out.println("Handling event " + event.getEventType());
+				
+				// on signifie à JavaFX que rien d’autre n’a besoin de cet événement
+				//event.consume();
+			}
+		};
+		
+		choisir.setOnAction(e -> System.out.println("Bouton CHOISIR appuyé"));
+
 		Text t = new Text(10, 50, "Entrez votre code d'accès");
 		TextField motDePasse = new TextField();
 		zoneInfos.getChildren().add(t);
 		zoneInfos.getChildren().add(motDePasse);
+		
+		//Récupère l'élément actuellement sélectionné
+		String currentElm = listView.getSelectionModel().getSelectedItem();
+		
+		Text infos = new Text(10, 50, "Nom :\t" + currentElm
+		+ "\nPoints de fidélité :\t215"
+		+ "\nPoubelles :\t01"
+		);
+		zoneInfos.getChildren().add(infos);
 		
 		
 	    Scene scene = new Scene(root, 500, 300);
@@ -54,3 +86,6 @@ public class FenetreParticulier extends Application {
 		Application.launch (args);
 	}
 }
+
+
+
