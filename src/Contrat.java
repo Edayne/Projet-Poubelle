@@ -64,5 +64,9 @@ public class Contrat {
             }
             sc.close();
         }
-
+    public static void main(String[] args) {
+        Contrat contrat = new Contrat();
+        Date date = new Date();
+        contrat.renouveler(date);
+    }
 }

@@ -12,9 +12,10 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
-public class Main {
-
-	public static void main(String[] args) {
+public class Main extends Application{
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
 		// Création de d'utilisateur pour faire les tests des fonctions
 		Utilisateur user1 = new Utilisateur(1, "Alice");
         user1.setCodeAcces(1234);
@@ -66,51 +67,30 @@ public class Main {
 		System.out.println(contrat.getProduitConcerné().toString());
 		*/
 		System.out.println("Fin de l'éxécution.");
+		   
+		// Code pour créer une page de connexion
+		Label nameL = new Label("Nom :");
+		TextField nameF = new TextField();
+
+		Label pwL = new Label("Code d'accès :");
+		TextField pwF = new TextField();
+
+		Button connectB = new Button("Connexion");
+		
+		GridPane gridpane = new GridPane();
+		gridpane.addRow(0, nameL, nameF);
+		gridpane.addRow(1, pwL, pwF);
+		gridpane.add(connectB, 0, 2, 2, 1);
+
+		GridPane.setHalignment(connectB, HPos.CENTER);
+
+		Scene scene = new Scene(gridpane);
+		
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 	
-
-	//Fonction qui permet la lecture de fichiers csv/txt avec un délimiteur ","
-	public ArrayList<String[]> readData() throws IOException { 
-        int count = 0;
-        String file = "../donnees/utilisateur.txt";
-        ArrayList<String[]> content = new ArrayList<>();
-
-        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String line = "";
-            while ((line = br.readLine()) != null) {
-                content.add(line.split(","));
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Fichier utilisateur.txt introuvable !");
-        }
-
-        return content;
-    }
-	// Code pour créer une page de connexion
-	Label nameL = new Label("Nom :");
-	TextField nameF = new TextField();
-
-	Label pwL = new Label("Code d'accès :");
-	TextField pwF = new TextField();
-
-	Button connectB = new Button("Connexion");
-
-
-	public class GridPaneDemo extends Application {
-	
-		@Override
-		public void start(Stage primaryStage) throws Exception {
-				   
-			   
-			GridPane gridpane = new GridPane();
-			gridpane.addRow(0, nameL, nameF);
-			gridpane.addRow(1, pwL, pwF);
-			gridpane.add(connectB, 0, 2, 2, 1);
-	
-			GridPane.setHalignment(connectB, HPos.CENTER);
-	
-			Scene scene = new Scene(gridpane);
-			   }
+	public static void main(String[] args) {
+		Application.launch(args);
 	}
-	
 }

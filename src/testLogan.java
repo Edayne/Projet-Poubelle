@@ -1,3 +1,5 @@
+import java.util.Date;
+
 import javafx.application.Application;
 import javafx.scene.*;
 import javafx.scene.control.Button;
@@ -70,10 +72,23 @@ public class testLogan extends Application {
         
 
         VBox particulierLayout = new VBox(10);
-        particulierLayout.setAlignment(Pos.TOP_CENTER);
+        particulierLayout.setAlignment(Pos.CENTER);
         particulierLayout.getChildren().add(0,label);
         particulierLayout.getChildren().addAll(consulterHistoriqueBtn, convertirPtsBtn);
         Particuliers.setRoot(particulierLayout);
+        
+        //Ajout des boutons des fonctions pour commercants
+        VBox commerceLayout = new VBox(10);
+        commerceLayout.setAlignment(Pos.TOP_CENTER);
+        Button renouvelerBtn = new Button("Renouveler");
+        commerceLayout.getChildren().add(renouvelerBtn);
+        Commerce.setRoot(commerceLayout);
+        Contrat contratTest = new Contrat();
+        contratTest.setDatedeb(new Date());
+        contratTest.setDatefin(new Date());
+        renouvelerBtn.setOnAction(e -> {
+        	contratTest.renouveler(new Date());
+        });
         
         //ajout les butons dans liste commence
         VBox listeCommerceLayout = new VBox(10);
