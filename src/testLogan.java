@@ -86,6 +86,7 @@ public class testLogan extends Application {
         Contrat contratTest = new Contrat();
         contratTest.setDatedeb(new Date());
         contratTest.setDatefin(new Date());
+        
         renouvelerBtn.setOnAction(e -> {
         	contratTest.renouveler(new Date());
         });
@@ -135,6 +136,6 @@ public class testLogan extends Application {
 	}
 	
 	public static void main(String[] args) {
-		launch (args);
+		Application.launch (args);
 	}
 }
